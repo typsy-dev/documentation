@@ -1,5 +1,13 @@
-# Documentation
-Information on how to integrate with Typsy
+# Integrating with Typsy
+There are many ways to integrate with Typsy and sometimes the choice of options can be a bit confusing. The good news is that the process is typically simple and quick and we are here to help make it happen.
+
+The following document explains the three items you need to cover:
+1. Member account management - how you create accounts for your users in the Typsy system
+2. Signing into Typsy - how your members/users/staff will sign into Typsy
+3. Accessing Typsy content/training - how your members/users/staff will access our library of content and the (optional) training assigned to them.
+
+### Integration overview
+https://docs.google.com/document/d/1vv0EgVPCiCUX15xJEFbs0elN80CzUsri1OvxBgrI4oU/edit?usp=sharing
 
 ## Typsy Web Player
 It’s possible to embed Typsy Lessons into an external website through the use of the ‘Typsy Web Player’.
