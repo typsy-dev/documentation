@@ -9,6 +9,18 @@ The following document explains the three items you need to cover:
 ### Integration overview
 https://docs.google.com/document/d/1vv0EgVPCiCUX15xJEFbs0elN80CzUsri1OvxBgrI4oU/edit?usp=sharing
 
+# Integration options
+The following sections detail some of the integration options available
+
+## LTI
+Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust and simple approach supported by many Learning Management Systems (LMS)>
+
+### Moodle
+Documentation on how to setup LTI in Moodle - LINK COMING SOON
+
+### Canvas
+Documentation on how to setup LTI in Canvas - LINK COMING SOON
+
 ## Typsy Web Player
 It’s possible to embed Typsy Lessons into an external website through the use of the ‘Typsy Web Player’.
 
@@ -25,7 +37,7 @@ Typsy provides an API that can be used to enable custom integration with LMS bas
 This approach is typically more complex than using the ‘Typsy Web Player’ (which provides a simple solution for embedding a Typsy lesson via an iFrame). 
 
 A sample project, using ASP.NET Core, demonstrates how to enable the playing of Typsy Lessons/Videos returned from the API.
-https://github.com/typsy-dev/player
+https://github.com/typsy-dev/api-player
 
 ### Detailed documentation
 https://docs.google.com/document/d/1ZuWk7--Nl_gFKzv2ACaXw76UBGk_-QDIapnLuH6oBZ0/edit?usp=sharing
