@@ -13,10 +13,10 @@ https://docs.google.com/document/d/1vv0EgVPCiCUX15xJEFbs0elN80CzUsri1OvxBgrI4oU/
 The following sections detail some of the integration options available
 
 ## LTI
-Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust and simple approach supported by many Learning Management Systems (LMS)>
+Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust and simple approach supported by many Learning Management Systems (LMS).
 
 ### Moodle
-Documentation on how to setup LTI in Moodle - LINK COMING SOON
+Documentation on how to setup LTI in Moodle - https://docs.google.com/document/d/1px34Gz59wV716BVvLpp7BAh7k22K-YgCQAj_eosY4f0/edit?usp=sharing
 
 ### Canvas
 Documentation on how to setup LTI in Canvas - LINK COMING SOON
