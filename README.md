@@ -28,6 +28,9 @@ The Typsy Player returns an HTML page which is typically embedded into an extern
 
 The Typsy Player requires certain information passed to it in the URL for authentication and to identify the user.  The Typsy Player tracks all viewing information to the Typsy System. Should the user or manager wish to, they can login and see their statistics.
 
+A sample project, using ASP.NET Core, demonstrates how to embed Typsy Lessons/Videos within an iFrame.
+https://github.com/typsy-dev/web-player
+
 ### Detailed documentation
 https://docs.google.com/document/d/1zunI9KtcbCa5bWecYTpwDHke8pt_8fQv2CCnQ9hwqUM/edit?usp=sharing
 
