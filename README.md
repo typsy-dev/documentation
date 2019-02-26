@@ -10,7 +10,7 @@ The following document explains the three items you need to cover:
 https://docs.google.com/document/d/1vv0EgVPCiCUX15xJEFbs0elN80CzUsri1OvxBgrI4oU/edit?usp=sharing
 
 # Integration options
-The following sections detail some of the integration options available
+The following sections detail some of the specific integration options covered in the 'Integration Overview'. 
 
 ## LTI
 Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust and simple approach supported by many Learning Management Systems (LMS).
