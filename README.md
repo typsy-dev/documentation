@@ -19,7 +19,10 @@ Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust
 Documentation on how to setup LTI in Moodle - https://docs.google.com/document/d/1px34Gz59wV716BVvLpp7BAh7k22K-YgCQAj_eosY4f0/edit?usp=sharing
 
 ### Canvas
-Documentation on how to setup LTI in Canvas - LINK COMING SOON
+Documentation on how to setup LTI in Canvas - https://docs.google.com/document/d/1d-bvbrFG1chRzptg63zhF0UN_5DxoBf6HmfIHeY3sjk/edit?usp=sharing
+
+### Blackboard
+Documentation on how to setup LTI in Blackboard - https://docs.google.com/document/d/1z2acuyLy6dNxJDz8Z3RkQNtM-KF2s8Rdhc7bohvVNy4/edit?usp=sharing
 
 ## Typsy Web Player
 It’s possible to embed Typsy Lessons into an external website through the use of the ‘Typsy Web Player’.
