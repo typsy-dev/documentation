@@ -25,7 +25,7 @@ Documentation on how to setup LTI in Canvas - https://docs.google.com/document/d
 Documentation on how to setup LTI in Blackboard - https://docs.google.com/document/d/1z2acuyLy6dNxJDz8Z3RkQNtM-KF2s8Rdhc7bohvVNy4/edit?usp=sharing
 
 ## Typsy Web Player
-It’s possible to embed Typsy Lessons into an external website through the use of the ‘Typsy Web Player’.
+The simplest solution to embed Typsy Lessons into an external website. Quick to implement and low ongoing maintenance.
 
 The Typsy Player returns an HTML page which is typically embedded into an external system using an iFrame or through launching a new browser window or tab.
 
@@ -42,7 +42,7 @@ https://docs.google.com/document/d/1zunI9KtcbCa5bWecYTpwDHke8pt_8fQv2CCnQ9hwqUM/
 ## Typsy LMS API
 Typsy provides an API that can be used to enable custom integration with LMS based solutions.  The API returns JSON objects.
 
-This approach is typically more complex than using the ‘Typsy Web Player’ (which provides a simple solution for embedding a Typsy lesson via an iFrame). 
+This approach is typically more complex than using the ‘Typsy Web Player’ (which provides a simple solution for embedding a Typsy lesson via an iFrame). It also has potential for a higher maintenance overhead as, should there be any changes to the structure of the video player, updates will be be required within your LMS.  We always suggest using the Typsy Web Player over the API.  
 
 ![Image of Typsy Player embedded using API](http://images.typsy.com/images/integrations/typsy-web-player-api.png?width=850)
 
