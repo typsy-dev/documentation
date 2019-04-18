@@ -44,6 +44,8 @@ Typsy provides an API that can be used to enable custom integration with LMS bas
 
 This approach is typically more complex than using the ‘Typsy Web Player’ (which provides a simple solution for embedding a Typsy lesson via an iFrame). 
 
+![Image of Typsy Player embedded using API](http://images.typsy.com/images/integrations/typsy-web-player-api.png?width=850)
+
 A sample project, using ASP.NET Core, demonstrates how to enable the playing of Typsy Lessons/Videos returned from the API.
 https://github.com/typsy-dev/api-player
 
