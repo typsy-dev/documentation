@@ -2,12 +2,12 @@
 There are a variety of options to integrate with Typsy and sometimes the choices can be a bit confusing. The good news is that the process is typically simple and quick and we are here to help make it happen.
 
 ### Choose integration approach
-In summary, you connect via either:
-1. LTI
+You connect via either:
+1. Learning Tools Interoperability (LTI)
 2. Typsy Web Player
 3. Typsy LMS API
 
-Each of these approaches are detailed below.
+Each of these approaches are detailed below under 'Integration options'.
 
 ### Integration overview
 Any integration with Typsy requires that you support three key functions:
@@ -15,7 +15,7 @@ Any integration with Typsy requires that you support three key functions:
 2. Signing into Typsy - how your members/users/staff will sign into Typsy (all users have the option of accessing Typsy directly to discover all the Typsy content)
 3. Accessing Typsy content/training - how your members/users/staff will access our library of content and the (optional) training assigned to them (how the Typsy Content will be presented).
 
-All of the integration approaches enable you to complete three key functions
+All of the integration approaches enable you to complete these three key functions.
 
 The following document provides an overview of how integrations with Typsy work:
 https://docs.google.com/document/d/1vv0EgVPCiCUX15xJEFbs0elN80CzUsri1OvxBgrI4oU/edit?usp=sharing
@@ -25,7 +25,8 @@ The following sections detail the specific integration options covered in the 'I
 
 ## LTI
 Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust and simple approach supported by many Learning Management Systems (LMS).  
-This approach is typically the best way to integrate with Typsy.
+
+*This approach is typically the best way to integrate with Typsy*.
 
 ### Moodle
 Documentation on how to setup LTI in Moodle - https://docs.google.com/document/d/1px34Gz59wV716BVvLpp7BAh7k22K-YgCQAj_eosY4f0/edit?usp=sharing
@@ -37,7 +38,7 @@ Documentation on how to setup LTI in Canvas - https://docs.google.com/document/d
 Documentation on how to setup LTI in Blackboard - https://docs.google.com/document/d/1z2acuyLy6dNxJDz8Z3RkQNtM-KF2s8Rdhc7bohvVNy4/edit?usp=sharing
 
 ## Typsy Web Player
-The simplest solution to embed Typsy Lessons into an external website. Quick to implement and low ongoing maintenance.
+If your LMS does not support the LTI standard then this is usually the simplest alternative. Quick to implement and low ongoing maintenance.
 
 If your LMS does not support the LTI standard then this is usually the best alternative as it allows you to embed Typsy Lessons into a user experience you manage.
 
