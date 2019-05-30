@@ -26,7 +26,7 @@ The following sections detail the specific integration options covered in the 'I
 ## LTI
 Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust and simple approach supported by many Learning Management Systems (LMS).  
 
-*This approach is typically the best way to integrate with Typsy*.
+*LTI is typically the best way to integrate with Typsy*.
 
 ### Moodle
 Documentation on how to setup LTI in Moodle - https://docs.google.com/document/d/1px34Gz59wV716BVvLpp7BAh7k22K-YgCQAj_eosY4f0/edit?usp=sharing
