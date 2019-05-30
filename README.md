@@ -1,19 +1,31 @@
 # Integrating with Typsy
-There are many ways to integrate with Typsy and sometimes the choice of options can be a bit confusing. The good news is that the process is typically simple and quick and we are here to help make it happen.
+There are a variety of options to integrate with Typsy and sometimes the choices can be a bit confusing. The good news is that the process is typically simple and quick and we are here to help make it happen.
 
-The following document explains the three items you need to cover:
-1. Member account management - how you create accounts for your users in the Typsy system
-2. Signing into Typsy - how your members/users/staff will sign into Typsy
-3. Accessing Typsy content/training - how your members/users/staff will access our library of content and the (optional) training assigned to them.
+### Choose integration approach
+In summary, you connect via either:
+1. LTI
+2. Typsy Web Player
+3. Typsy LMS API
+
+Each of these approaches are detailed below.
 
 ### Integration overview
+Any integration with Typsy requires that you support three key functions:
+1. Member account management - how you create accounts for your users in the Typsy system (even if they never leave your learning management system)
+2. Signing into Typsy - how your members/users/staff will sign into Typsy (all users have the option of accessing Typsy directly to discover all the Typsy content)
+3. Accessing Typsy content/training - how your members/users/staff will access our library of content and the (optional) training assigned to them (how the Typsy Content will be presented).
+
+All of the integration approaches enable you to complete three key functions
+
+The following document provides an overview of how integrations with Typsy work:
 https://docs.google.com/document/d/1vv0EgVPCiCUX15xJEFbs0elN80CzUsri1OvxBgrI4oU/edit?usp=sharing
 
 # Integration options
-The following sections detail some of the specific integration options covered in the 'Integration Overview'. 
+The following sections detail the specific integration options covered in the 'Integration Overview'. 
 
 ## LTI
-Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust and simple approach supported by many Learning Management Systems (LMS).
+Utilizing the Learning Tools Interoperability (LTI) standard is a common, robust and simple approach supported by many Learning Management Systems (LMS).  
+This approach is typically the best way to integrate with Typsy.
 
 ### Moodle
 Documentation on how to setup LTI in Moodle - https://docs.google.com/document/d/1px34Gz59wV716BVvLpp7BAh7k22K-YgCQAj_eosY4f0/edit?usp=sharing
@@ -27,9 +39,11 @@ Documentation on how to setup LTI in Blackboard - https://docs.google.com/docume
 ## Typsy Web Player
 The simplest solution to embed Typsy Lessons into an external website. Quick to implement and low ongoing maintenance.
 
-The Typsy Player returns an HTML page which is typically embedded into an external system using an iFrame or through launching a new browser window or tab.
+If your LMS does not support the LTI standard then this is usually the best alternative as it allows you to embed Typsy Lessons into a user experience you manage.
 
-The Typsy Player requires certain information passed to it in the URL for authentication and to identify the user.  The Typsy Player tracks all viewing information to the Typsy System. Should the user or manager wish to, they can login and see their statistics.
+The Typsy Player returns an HTML page which is embedded into an external system using an iFrame or through launching a new browser window or tab.
+
+The Typsy Player requires certain information passed to it in the URL for authentication and to identify the user.  The Typsy Player tracks all viewing information to the Typsy System. Should the user or manager wish to, they can login to Typsy and see their statistics.
 
 ![Image of Typsy Player embedded as an iFrame](http://images.typsy.com/images/integrations/typsy-web-player-iframe.png?width=850)
 
