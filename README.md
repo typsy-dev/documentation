@@ -4,18 +4,19 @@ There are a variety of options to integrate with Typsy and sometimes the choices
 ### Choose integration approach
 You connect via either:
 1. Learning Tools Interoperability (LTI)
-2. Typsy Web Player
-3. Typsy LMS API
+2. SCORM
+4. Typsy Web Player
+5. Typsy LMS API
 
 Each of these approaches are detailed below under 'Integration options'.
 
 ### Integration overview
 Any integration with Typsy requires that you support three key functions:
-1. Member account management - how you create accounts for your users in the Typsy system (even if they never leave your learning management system)
-2. Signing into Typsy - how your members/users/staff will sign into Typsy (all users have the option of accessing Typsy directly to discover all the Typsy content)
-3. Accessing Typsy content/training - how your members/users/staff will access our library of content and the (optional) training assigned to them (how the Typsy Content will be presented).
+1. Member account management - how you create accounts for your users in the Typsy system (even if they never leave your learning management system they need an account in Typsy)
+2. Signing into Typsy - how your members/users/staff will sign into the Typsy Platform (all users have the option of accessing Typsy directly to discover all the Typsy content and view their profile/certificates/badges )
+3. Accessing Typsy content/training - how your members/users/staff will access our library of content (e.g. through an LMS or directly in Typsy platform) and the (optional) training assigned to them.
 
-All of the integration approaches enable you to complete these three key functions.
+All of the integration approaches enable you to complete the aforementioned three key functions.
 
 The following document provides an overview of how integrations with Typsy work:
 https://docs.google.com/document/d/1vv0EgVPCiCUX15xJEFbs0elN80CzUsri1OvxBgrI4oU/edit?usp=sharing
@@ -39,6 +40,11 @@ Documentation on how to setup LTI in Canvas - https://docs.google.com/document/d
 
 ### Blackboard
 Documentation on how to setup LTI in Blackboard - https://docs.google.com/document/d/1z2acuyLy6dNxJDz8Z3RkQNtM-KF2s8Rdhc7bohvVNy4/edit?usp=sharing
+
+## SCORM
+Utilizing the SCORM standard is a common approach in many older Learning Management Systems.  Typsy always recommends LTI over SCORM as it is more feature rich.  As SCORM does not pass across the User's email address there are some additional steps in place, prior to watching the first lesson, to capture the email.  
+
+Documentation on how to setup SCORM, using Moodle as an example - https://docs.google.com/document/d/165aOsSMsAeGEnrjdWuews6mYQ3aBXGa6qxZa-qhNHKc/edit?usp=sharing 
 
 ## Typsy Web Player
 If your LMS does not support the LTI standard then this is usually the simplest alternative. Quick to implement and low ongoing maintenance.
