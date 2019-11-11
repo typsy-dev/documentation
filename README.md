@@ -47,9 +47,7 @@ Utilizing the SCORM standard is a common approach in many older Learning Managem
 Documentation on how to setup SCORM, using Moodle as an example - https://docs.google.com/document/d/165aOsSMsAeGEnrjdWuews6mYQ3aBXGa6qxZa-qhNHKc/edit?usp=sharing 
 
 ## Typsy Web Player
-If your LMS does not support the LTI standard then this is usually the simplest alternative. Quick to implement and low ongoing maintenance.
-
-If your LMS does not support the LTI standard then this is usually the best alternative as it allows you to embed Typsy Lessons into a user experience you manage.
+If your LMS does not support the LTI standard then this is usually the simplest alternative. Quick to implement and low ongoing maintenance. It allows you to embed Typsy Lessons into a user experience you manage.
 
 The Typsy Player returns an HTML page which is embedded into an external system using an iFrame or through launching a new browser window or tab.
 
