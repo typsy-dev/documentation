@@ -54,7 +54,7 @@ The Typsy Player returns an HTML page which is embedded into an external system 
 
 The Typsy Player requires certain information passed to it in the URL for authentication and to identify the user.  The Typsy Player tracks all viewing information to the Typsy System. Should the user or manager wish to, they can login to Typsy and see their statistics.
 
-![Image of Typsy Player embedded as an iFrame](http://images.typsy.com/images/integrations/typsy-web-player-iframe.png?width=851)
+![Image of Typsy Player embedded as an iFrame](https://typsy.blob.core.windows.net/images/integrations/typsy-web-player-iframe.png)
 
 A sample project, using ASP.NET Core, demonstrates how to embed Typsy Lessons/Videos within an iFrame.
 https://github.com/typsy-dev/web-player
@@ -67,7 +67,7 @@ Typsy provides an API that can be used to enable custom integration with LMS bas
 
 This approach is typically more complex than using the ‘Typsy Web Player’ (which provides a simple solution for embedding a Typsy lesson via an iFrame). It also has potential for a higher maintenance overhead as, should there be any changes to the structure of the video player, updates will be be required within your LMS.  We always suggest using the Typsy Web Player over the API.  
 
-![Image of Typsy Player embedded using API](http://images.typsy.com/images/integrations/typsy-web-player-api.png?width=851)
+![Image of Typsy Player embedded using API](https://typsy.blob.core.windows.net/images/integrations/typsy-web-player-api.png)
 
 A sample project, using ASP.NET Core, demonstrates how to enable the playing of Typsy Lessons/Videos returned from the API.
 https://github.com/typsy-dev/api-player
