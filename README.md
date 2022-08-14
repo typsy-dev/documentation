@@ -43,16 +43,18 @@ Documentation on how to setup LTI in Canvas - https://docs.google.com/document/d
 Documentation on how to setup LTI in Blackboard - https://docs.google.com/document/d/1z2acuyLy6dNxJDz8Z3RkQNtM-KF2s8Rdhc7bohvVNy4/edit?usp=sharing
 
 ## SCORM
-Utilizing the SCORM standard is a common approach in many older Learning Management Systems.  Typsy always recommends LTI over SCORM as it is more feature rich.  As SCORM does not pass across the User's email address there are some additional steps in place, prior to watching the first lesson, to capture the email.  
+Utilizing the SCORM standard is a common approach in many older Learning Management Systems.  Typsy always **recommends LTI over SCORM** as it is more feature rich.  As SCORM does not pass across the User's email address there are some additional steps in place, prior to watching the first lesson, to capture the email.  
 
 Documentation on how to setup SCORM, using Moodle as an example - https://docs.google.com/document/d/165aOsSMsAeGEnrjdWuews6mYQ3aBXGa6qxZa-qhNHKc/edit?usp=sharing 
 
 ## Typsy Web Player
-If your LMS does not support the LTI standard then this is usually the simplest alternative. Quick to implement and low ongoing maintenance. It allows you to embed Typsy Lessons into a user experience you manage.
+If your LMS does not support the LTI standard then this is usually the simplest alternative. Quick to implement and low ongoing maintenance however **lacks key features available within LTI** - such as receiving the 'outcome' (information on if the user has watched the lesson).   
+
+Note that we **strongly recommend building support for LTI** over using the Typsy Web Player.  
 
 The Typsy Player returns an HTML page which is embedded into an external system using an iFrame or through launching a new browser window or tab.
 
-The Typsy Player requires certain information passed to it in the URL for authentication and to identify the user.  The Typsy Player tracks all viewing information to the Typsy System. Should the user or manager wish to, they can login to Typsy and see their statistics.
+The Typsy Player requires certain information passed to it in the URL for authentication and to identify the user.   
 
 ![Image of Typsy Player embedded as an iFrame](https://typsy.blob.core.windows.net/images/integrations/typsy-web-player-iframe.png)
 
@@ -65,7 +67,9 @@ https://docs.google.com/document/d/1zunI9KtcbCa5bWecYTpwDHke8pt_8fQv2CCnQ9hwqUM/
 ## Typsy LMS API
 Typsy provides an API that can be used to enable custom integration with LMS based solutions.  The API returns JSON objects.
 
-This approach is typically more complex than using the ‘Typsy Web Player’ (which provides a simple solution for embedding a Typsy lesson via an iFrame). It also has potential for a higher maintenance overhead as, should there be any changes to the structure of the video player, updates will be be required within your LMS.  We always suggest using the Typsy Web Player over the API.  
+This approach is typically more complex than using the ‘Typsy Web Player’ (which provides a simple solution for embedding a Typsy lesson via an iFrame). It also has potential for a higher maintenance overhead as, should there be any changes to the structure of the video player, updates will be be required within your LMS.  
+
+We always suggest using the Typsy Web Player over the API.  
 
 ![Image of Typsy Player embedded using API](https://typsy.blob.core.windows.net/images/integrations/typsy-web-player-api.png)
 
