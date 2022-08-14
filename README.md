@@ -67,9 +67,11 @@ https://docs.google.com/document/d/1zunI9KtcbCa5bWecYTpwDHke8pt_8fQv2CCnQ9hwqUM/
 ## Typsy LMS API
 Typsy provides an API that can be used to enable custom integration with LMS based solutions.  The API returns JSON objects.
 
-This approach is typically more complex than using the ‘Typsy Web Player’ (which provides a simple solution for embedding a Typsy lesson via an iFrame). It also has potential for a higher maintenance overhead as, should there be any changes to the structure of the video player, updates will be be required within your LMS.  
+This approach is typically more complex than using 'LTI' or the 'Typsy Web Player' (which provides a simple solution for embedding a Typsy lesson via an iFrame). It also has potential for a higher maintenance overhead as, should there be any changes to the structure of the video player, updates will be be required within your LMS. 
 
-We always suggest using the Typsy Web Player over the API.  
+Typsy will only approve this approach in exceptional circumstances. 
+
+**We always suggest using LTI over the API**.  
 
 ![Image of Typsy Player embedded using API](https://typsy.blob.core.windows.net/images/integrations/typsy-web-player-api.png)
 
