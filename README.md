@@ -7,7 +7,7 @@ You connect via either:
 2. SCORM
 4. Typsy Web Player
 5. Typsy LMS API
-6. xAPI (contact us for more information about this beta feature)
+6. [xApi](https://github.com/typsy-dev/documentation/blob/master/xApi.md) - contact us for more information about this feature.
 
 Each of these approaches are detailed below under 'Integration options'.
 
