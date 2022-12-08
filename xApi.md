@@ -12,7 +12,6 @@ For more information about xApi visit https://xapi.com/statements-101
 ### Sample xApi message
 This is a sample message sent at course completion
 
-`
     {
         "id": "f4178dfb-d61c-4a16-8ab3-5b9fccae7d8c",
         "stored": "2018-11-01T19:03:01.2719736Z",
@@ -89,4 +88,5 @@ This is a sample message sent at course completion
         },
         "timestamp": "2018-11-01T19:03:01.2719736Z"
     }
-`
+
+
