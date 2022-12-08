@@ -1,12 +1,18 @@
 # xApi messages
 Typsy supports publishing xApi statements when certain learning events are completed.
+
 Typsy customers can subscribe to these messages and save the information in their own Learning Management System (LMS) and/or Reporting System (e.g a data warehouse).
 
 For more information about xApi visit https://xapi.com/statements-101
 
+## Supported statements
+Typsy currently supports **progressed** and **completed** [verbs](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) for Courses.
+
+At a future date we will also provide support for the same verbs, for Lessons.
+
 ### Integration overview
 1. A learner completes a course within Typsy.
-2. Typsy publishes (pushes) an xApi statement (JSON) to an HTTPS endpoint that the customer exposes (this is typically a REST based endpoint that saves the xApi message to a queue).
+2. Typsy publishes (pushes) an xApi statement (JSON) to an **asynchronous** HTTPS endpoint that the customer exposes (this is typically a REST based endpoint that saves the xApi message to a queue).
 3. Customer process message - saving the data they require to an internal system.
 
 ### Sample xApi message
@@ -51,8 +57,8 @@ This is a sample message sent at course completion
                     "http://xapi.typsy.com/course/issuer": "Typsy",
                     "http://xapi.typsy.com/course/self-discovery": false,
                     "http://xapi.typsy.com/course/iteration": 1,
-                    "http://xapi.typsy.com/user/workspace-structures": "Location A,Location B",
-                    "http://xapi.typsy.com/user/workspace-teams": "Bar",
+                    "http://xapi.typsy.com/user/workspace-structures": "Hotel A,Hotel B",
+                    "http://xapi.typsy.com/user/workspace-teams": "Bar Staff",
                     "http://xapi.typsy.com/user/workspace-job-roles": "Barista"
                 },
                 "interactionType": "choice"
