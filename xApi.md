@@ -1,4 +1,4 @@
-# xApi messages
+# xApi statements
 Typsy supports publishing xApi statements when certain learning events are completed.
 
 Typsy customers can subscribe to these messages and save the information in their own Learning Management System (LMS) and/or Reporting System (e.g a data warehouse).
@@ -10,10 +10,18 @@ Typsy currently supports **progressed** and **completed** [verbs](https://github
 
 At a future date we will also provide support for the same verbs, for Lessons.
 
+## Integration
 ### Integration overview
 1. A learner completes a course within Typsy.
 2. Typsy publishes (pushes) an xApi statement (JSON) to an **asynchronous** HTTPS endpoint that the customer exposes (this is typically a REST based endpoint that saves the xApi message to a queue).
 3. Customer process message - saving the data they require to an internal system.
+
+### Customer endpoint
+The endpoint provided to Typsy must have the following characteristics:
+1. Accessible over the internet via HTTPS
+2. High availability
+3. Must be asynchronous (in other words, accept the xApi message from Typsy and immediately provide a valid HTTP status code).  The message is typically stored internally on a message queue for subsequent processing.
+4. It's preferable that the endpoint supports authentication.
 
 ### Sample xApi message
 This is a sample message sent at course completion
