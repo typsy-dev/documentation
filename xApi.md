@@ -13,14 +13,14 @@ At a future date we will also provide support for the same verbs, for Lessons.
 ## Integration
 ### Integration overview
 1. A learner completes a course within Typsy.
-2. Typsy publishes (pushes) an xApi statement (JSON) to an **asynchronous** HTTPS endpoint that the customer exposes (this is typically a REST based endpoint that saves the xApi message to a queue).
+2. Typsy publishes (pushes) an xApi statement (JSON) to an asynchronous HTTPS endpoint that the customer exposes.
 3. Customer process message - saving the data they require to an internal system.
 
 ### Customer endpoint
 The endpoint provided to Typsy must have the following characteristics:
-1. Accessible over the internet via HTTPS
+1. Accessible over the internet via HTTPS (it is typically a REST based)
 2. High availability
-3. Must be asynchronous (in other words, accept the xApi message from Typsy and immediately provide a valid HTTP status code).  The message is typically stored internally on a message queue for subsequent processing.
+3. Must be **asynchronous** (in other words, accept the xApi message from Typsy and immediately provide a valid HTTP status code).  The message is typically stored internally on a message queue for subsequent processing.
 4. It's preferable that the endpoint supports authentication.
 
 ### Sample xApi message
