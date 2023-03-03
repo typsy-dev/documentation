@@ -22,6 +22,7 @@ The endpoint provided to Typsy must have the following characteristics:
 2. High availability
 3. Must be **asynchronous** (in other words, accept the xApi message from Typsy and immediately provide a valid [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)).  The message is typically stored internally on a message queue for subsequent processing.
 4. It's preferable that the endpoint supports authentication.
+5. The endpoint must support idempotency - that is it must handle the same message being sent multiple times.  Should the same message be received multiple times a 2xx status code must be returned and the process to handle the duplicate message is internal to the customer system.
 
 ### Sample xApi message
 This is a sample message sent at course completion
@@ -95,6 +96,7 @@ This is a sample message sent at course completion
             "extensions": {
                 "http://xapi.typsy.com/user/workspace-id": 987654321,
                 "http://xapi.typsy.com/user/workspace-email": "john.shaker@sample.com",
+                 "http://xapi.typsy.com/user/workspace-claims": "customer-employee-id:0123456789",
                 "http://xapi.typsy.com/account/id": 82,
                 "http://xapi.typsy.com/account/name": "Demo Inc",
                 "http://xapi.typsy.com/account/vanity-name": "Demo"
