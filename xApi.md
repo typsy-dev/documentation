@@ -96,7 +96,7 @@ This is a sample message sent at course completion
             "extensions": {
                 "http://xapi.typsy.com/user/workspace-id": 987654321,
                 "http://xapi.typsy.com/user/workspace-email": "john.shaker@sample.com",
-                 "http://xapi.typsy.com/user/workspace-claims": "customer-employee-id:0123456789",
+                "http://xapi.typsy.com/user/workspace-claims": "customer-employee-id:0123456789",
                 "http://xapi.typsy.com/account/id": 82,
                 "http://xapi.typsy.com/account/name": "Demo Inc",
                 "http://xapi.typsy.com/account/vanity-name": "Demo"
