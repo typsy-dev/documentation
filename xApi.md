@@ -77,16 +77,16 @@ This is a sample message sent at course completion
             "completion": true,
             "duration": "PT28M48S",
             "score": {
-                "scaled": 1.14,
+                "scaled": 1,
                 "raw": 8,
                 "min": 0,
-                "max": 7
+                "max": 8
             },
             "extensions": {
                 "http://xapi.typsy.com/course/quiz/attempts": 1,
-                "http://xapi.typsy.com/course/quiz/scaled": null,
-                "http://xapi.typsy.com/course/quiz/raw": null,
-                "http://xapi.typsy.com/course/quiz/min": 0,
+                "http://xapi.typsy.com/course/quiz/scaled": 0.85,
+                "http://xapi.typsy.com/course/quiz/raw": 11,
+                "http://xapi.typsy.com/course/quiz/min": 10,
                 "http://xapi.typsy.com/course/quiz/max": 13
             }
         },
