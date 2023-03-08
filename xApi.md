@@ -77,10 +77,10 @@ This is a sample message sent at course completion
             "completion": true,
             "duration": "PT28M48S",
             "score": {
-                "scaled": 1,
-                "raw": 8,
-                "min": 0,
-                "max": 8
+                "scaled": 0.85,
+                "raw": 11,
+                "min": 10,
+                "max": 13
             },
             "extensions": {
                 "http://xapi.typsy.com/course/quiz/attempts": 1,
@@ -105,4 +105,76 @@ This is a sample message sent at course completion
         "timestamp": "2018-11-01T19:03:01.2719736Z"
     }
 
+This is a sample message sent at course progressed
+
+    {
+        "id": "f4178dfb-d61c-4a16-8ab3-5b9fccae7d8c",
+        "stored": "2018-11-01T19:03:01.2719736Z",
+        "authority": {
+            "objectType": "Agent",
+            "name": "Typsy",
+            "mbox": "mailto:badges@typsy.com"
+        },
+        "actor": {
+            "objectType": "Agent",
+            "name": "John Shaker",
+            "account": {
+                "homePage": "https://www.typsy.com/profile/john-shaker",
+                "name": "123456789"
+            }
+        },
+        "verb": {
+            "id": "http://xapi.typsy.com/verbs/progressed",
+            "display": {
+                "en": "progressed"
+            }
+        },
+        "object": {
+            "objectType": "Activity",
+            "id": "https://www.typsy.com/courses/wine-101-for-servers",
+            "definition": {
+                "type": "http://xapi.typsy.com/types/course",
+                "moreInfo": "https://www.typsy.com/courses/wine-101-for-servers",
+                "name": {
+                    "en": "Wine 101 for servers"
+                },
+                "description": {
+                    "en": "Mastering wine service is one of the most important and valuable skills a server can possess. The ability to perform tableside wine service with confidence is a guaranteed way to display your professionalism and your knowledge of the different aspects of the hospitality industry. It's also an una..."
+                },
+                "extensions": {
+                    "http://xapi.typsy.com/course/id": 299,
+                    "http://xapi.typsy.com/course/issuer": "Typsy",
+                    "http://xapi.typsy.com/course/self-discovery": false,
+                    "http://xapi.typsy.com/course/iteration": 1,
+                    "http://xapi.typsy.com/user/workspace-structures": "Hotel A,Hotel B",
+                    "http://xapi.typsy.com/user/workspace-teams": "Bar Staff",
+                    "http://xapi.typsy.com/user/workspace-job-roles": "Barista"
+                },
+                "interactionType": "choice"
+            }
+        },
+        "result": {
+            "completion": false,
+            "duration": "PT28M48S",
+            "score": {
+                "scaled": 0.77,
+                "raw": null,
+                "min": 10,
+                "max": 13
+            }
+        },
+        "context": {
+            "platform": "Typsy",
+            "language": "en",
+            "extensions": {
+                "http://xapi.typsy.com/user/workspace-id": 987654321,
+                "http://xapi.typsy.com/user/workspace-email": "john.shaker@sample.com",
+                "http://xapi.typsy.com/user/workspace-claims": "customer-employee-id:0123456789",
+                "http://xapi.typsy.com/account/id": 82,
+                "http://xapi.typsy.com/account/name": "Demo Inc",
+                "http://xapi.typsy.com/account/vanity-name": "Demo"
+            }
+        },
+        "timestamp": "2018-11-01T19:03:01.2719736Z"
+    }
 
