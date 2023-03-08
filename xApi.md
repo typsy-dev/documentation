@@ -157,8 +157,8 @@ This is a sample message sent at course progressed
             "completion": false,
             "duration": "PT28M48S",
             "score": {
-                "scaled": 0.77,
-                "raw": null,
+                "scaled": 0,
+                "raw": 0,
                 "min": 10,
                 "max": 13
             }
