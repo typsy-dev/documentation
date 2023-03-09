@@ -77,10 +77,10 @@ This is a sample message sent at course completion
             "completion": true,
             "duration": "PT28M48S",
             "score": {
-                "scaled": 0.85,
-                "raw": 11,
-                "min": 10,
-                "max": 13
+                "scaled": 1,
+                "raw": 14,
+                "min": 0,
+                "max": 14
             },
             "extensions": {
                 "http://xapi.typsy.com/course/quiz/attempts": 1,
@@ -157,10 +157,10 @@ This is a sample message sent at course progressed
             "completion": false,
             "duration": "PT28M48S",
             "score": {
-                "scaled": 0,
-                "raw": 0,
-                "min": 10,
-                "max": 13
+                "scaled": 0.07,
+                "raw": 1,
+                "min": 0,
+                "max": 14
             }
         },
         "context": {
