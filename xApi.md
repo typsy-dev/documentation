@@ -64,12 +64,12 @@ This is a sample message sent at course completion
                 "extensions": {
                     "http://xapi.typsy.com/course/id": 299,
                     "http://xapi.typsy.com/course/issuer": "Typsy",
-                    "http://xapi.typsy.com/course/expires": "2024-02-16T02:05:12.48Z",
                     "http://xapi.typsy.com/course/self-discovery": false,
                     "http://xapi.typsy.com/course/iteration": 1,
                     "http://xapi.typsy.com/user/workspace-structures": "Hotel A,Hotel B",
                     "http://xapi.typsy.com/user/workspace-teams": "Bar Staff",
                     "http://xapi.typsy.com/user/workspace-job-roles": "Barista"
+                    "http://xapi.typsy.com/badge/expires": "2024-02-16T02:05:12.48Z",
                 },
                 "interactionType": "choice"
             }
