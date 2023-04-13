@@ -44,7 +44,7 @@ This is a sample message sent at course completion
             }
         },
         "verb": {
-            "id": "http://xapi.typsy.com/verbs/completed",
+            "id": "http://adlnet.gov/expapi/verbs/completed",
             "display": {
                 "en": "completed"
             }
@@ -68,8 +68,8 @@ This is a sample message sent at course completion
                     "http://xapi.typsy.com/course/iteration": 1,
                     "http://xapi.typsy.com/user/workspace-structures": "Hotel A,Hotel B",
                     "http://xapi.typsy.com/user/workspace-teams": "Bar Staff",
-                    "http://xapi.typsy.com/user/workspace-job-roles": "Barista"
-                    "http://xapi.typsy.com/badge/expires": "2024-02-16T02:05:12.48Z",
+                    "http://xapi.typsy.com/user/workspace-job-roles": "Barista",
+                    "http://xapi.typsy.com/badge/expires": "2024-02-16T02:05:12.48Z"
                 },
                 "interactionType": "choice"
             }
@@ -125,7 +125,7 @@ This is a sample message sent at course progressed
             }
         },
         "verb": {
-            "id": "http://xapi.typsy.com/verbs/progressed",
+        "id": "http://adlnet.gov/expapi/verbs/progressed",
             "display": {
                 "en": "progressed"
             }
