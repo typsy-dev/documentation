@@ -8,13 +8,13 @@ For more information about xApi visit https://xapi.com/statements-101
 ## Supported statements
 Typsy currently supports **progressed** and **completed** [verbs](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) for Courses.
 
-At a future date we will also provide support for the same verbs, for Lessons.
+By default, these verbs use a Typsy namespace (e.g. http://xapi.typsy.com/verbs/completed). The messages can also be provided with the [ADLNET namespace](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) (e.g. https://adlnet.gov/expapi/verbs/completed)
 
 ## Integration
 ### Integration overview
 1. A learner completes a course within Typsy.
 2. Typsy publishes (pushes) an xApi statement (JSON) to an asynchronous HTTPS endpoint that the customer exposes.
-3. Customer processes message - saving the data they require to an internal system.  Any mapping of the fields within the xApi message to internal systems is the customer's responsibility. 
+3. Customer processes message - saving the data they require to an internal system.  Any mapping of the fields within the xApi message to internal systems is the customer's responsibility. Typsy is able to transform the xApi message it produces should specific fields be required in a particular format (e.g. if the value for a claim, that represents a unique user, must be attached to the Actor object).
 
 ### Customer endpoint
 The endpoint provided to Typsy must have the following characteristics:
@@ -22,7 +22,7 @@ The endpoint provided to Typsy must have the following characteristics:
 2. High availability
 3. Must be **asynchronous** (in other words, accept the xApi message from Typsy and immediately provide a valid [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)).  The message is typically stored internally on a message queue for subsequent processing.
 4. It's preferable that the endpoint supports authentication.
-5. The endpoint must support idempotency - that is it must handle the same message being sent multiple times.  Should the same message be received multiple times a 2xx status code must be returned and the process to handle the duplicate message is internal to the customer system.  This is important as there are scenarios where the same message can be sent twice - for example requests for batch migration (where all messages from a previous time frame can be requested again) or if there was an error in the message (e.g. a calculation is incorrect) and the message (with the same id) must be sent again.
+5. It is highly recommended that the endpoint supports idempotency - that is it must handle the same message being sent multiple times.  Should the same message be received multiple times a 2xx status code must be returned and the process to handle the duplicate message is internal to the customer system. Should you wish to reject the duplicate, provide a 409 status code.  This is important as there are scenarios where the same message can be sent twice - for example requests for batch migration (where all messages from a previous time frame can be requested again) or if there was an error in the message (e.g. a calculation is incorrect) and the message (with the same id) must be sent again.
 
 ### Sample xApi message
 This is a sample message sent at course completion
@@ -51,7 +51,7 @@ This is a sample message sent at course completion
         },
         "object": {
             "objectType": "Activity",
-            "id": "https://xapi.typsy.com/activity/f63362adee5a41368df79982203d628a",
+            "id": "http://xapi.typsy.com/activity/f63362adee5a41368df79982203d628a",
             "definition": {
                 "type": "http://xapi.typsy.com/types/course",
                 "moreInfo": "https://www.typsy.com/courses/wine-101-for-servers",
@@ -132,7 +132,7 @@ This is a sample message sent at course progressed
         },
         "object": {
             "objectType": "Activity",
-            "id": "https://xapi.typsy.com/activity/f63362adee5a41368df79982203d628a",
+            "id": "http://xapi.typsy.com/activity/f63362adee5a41368df79982203d628a",
             "definition": {
                 "type": "http://xapi.typsy.com/types/course",
                 "moreInfo": "https://www.typsy.com/courses/wine-101-for-servers",
