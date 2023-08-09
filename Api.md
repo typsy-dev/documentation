@@ -130,8 +130,10 @@ To get the status of the request that has been submitted you must make a call to
 ### Endpoint
 GET to https://api.typsy.com/member/request-status/{requestId}
 
+#### Request not processed yet
 If the initial request has not yet been processed you will receive a [204 No Content](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204) result.  Wait a minute and make another request.
-  
+
+#### Request processed successfully
 Example response where the member create request has been successful.
 
     {
@@ -142,7 +144,7 @@ Example response where the member create request has been successful.
         "success": true
     }
 
-## Bad request
+#### Bad request
 If the member create request has failed (for example you attempt to assign to a structure that does not exist) the response will look like the following.
 
     {
