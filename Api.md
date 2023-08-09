@@ -28,10 +28,14 @@ In C# this is generated using the following line of code:
 
     DateTime.UtcNow.ToString("O");
 
+Failure to provide a current UTC timestamp will result in a 401 status code and the following error message:
+
+	"Timestamp '2018-11-14T11:19:03.7269943Z' outside of acceptable range. Ensure that the timestamp you provide is current UTC time - e.g. now is '2023-08-09T23:18:21.4801739Z'."
+
 #### Typsy Account Id
 Typsy will provide a unique Account Id to include with each request.  The value is numeric, e.g. 123
 
-#### Typsy Public Key
+#### Typsy Key
 The value for the Typsy-Key header value is a Hash of your Typsy Key and UTC timestamp.  
 
 The value is created by concatenating your **Typsy Key** with the **UTC timestamp**. The hash must be generated for each request as it contains a timestamp.
@@ -174,6 +178,10 @@ Example response where the user already exists.
         ],
         "success": false
     }
+
+If you fail to produce a valid encrypted key then you will receive a 401 status code and the following error message:
+
+	"Account validation failed. Check that the Encrypted Key 'c7ccdb43e6b81b778f7aaeb7f3d9d7be297e6813441e517b8d5fd9f648979452' is a valid HmacSha256."
 
 ## Member depart
 
