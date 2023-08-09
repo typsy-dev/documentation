@@ -45,17 +45,28 @@ This can be demonstrated/tested using the following tool: http://beautifytools.c
 
 ![image](https://github.com/typsy-dev/documentation/assets/35910839/8e947f0d-a5ad-4426-b6fa-53643649cc8f)
 
+#### Typsy-Timestamp
+The timestamp must be in the following format: yyyy-MM-ddTHH:mm:SS.fffffffZ
+
+In C# this is generated using the following line of code:
+
+    DateTime.UtcNow.ToString("O");
+
+#### Typsy-Account-Id
+Typsy will provide a unique Account Id to include with each request.  The value is numeric, e.g. 123
+
 ## Member create
 
 ### Endpoint
 POST to https://api.typsy.com/member/create
 
-Example request to create a member.
+### Request
+Example request to create a member.  
 
 	{
         "firstName": "FirstName",
         "lastName": "LastName",
-        "email": "apiuser@typsy.com",
+        "email": "first.last@domain.com",
         "structures": [
             {
                 "name": "Venue A",
@@ -86,5 +97,90 @@ Example request to create a member.
             "createStructuresIfNotExist": true,
             "createTeamsIfNotExist": true,
             "reactivateIfDeparted": false
+        }
+    }
+
+### Response
+
+If the request is successful it is queued for processing and you will be provided with a receipt with the requestId.
+
+The status is likely to be 'in progress'.
+
+    {
+        "statusUrl": "https://api.typsy.com/member/request-status/23365f4b-7ae8-4d4d-bb74-ad8b4bfee647",
+        "requestId": "23365f4b-7ae8-4d4d-bb74-ad8b4bfee647",
+        "status": "in progress",
+        "errors": [],
+        "success": true
+    }
+
+## Request status
+To get the status of the request that has been submitted you must make a call to the request status endpoint.
+
+### Endpoint
+GET to https://api.typsy.com/member/request-status/{requestId}
+  
+Example response where the member create request has been successful.
+
+    {
+        "workspaceId": 123456789,
+        "requestId": "23365f4b-7ae8-4d4d-bb74-ad8b4bfee647",
+        "status": "success",
+        "errors": [],
+        "success": true
+    }
+
+## Bad request
+If the member create request has failed (for example you attempt to assign to a structure that does not exist) the response will look like the following.
+
+    {
+        "workspaceId": null,
+        "requestId": "23365f4b-7ae8-4d4d-bb74-ad8b4bfee647",
+        "status": "failed",
+        "errors": [
+            {
+                "code": "structure_name_does_not_exist",
+                "description": "Venue B does not exist in your account."
+            }
+        ],
+        "success": false
+    }
+
+Example response where the user already exists.
+
+    {
+        "workspaceId": null,
+        "requestId": "23365f4b-7ae8-4d4d-bb74-ad8b4bfee647",
+        "status": "failed",
+        "errors": [
+            {
+                "code": "user_already_exists",
+                "description": "A user with the email first.last@domain.com already exists within your account."
+            }
+        ],
+        "success": false
+    }
+
+## Member depart
+
+### Endpoint
+POST to https://api.typsy.com/member/depart
+
+### Request
+Example request to depart a member where you have the workspaceId (the unique identifier for the user within your account).  
+
+    {
+        "workspaceId": 123456789,
+        "options": {
+            "sendFarewellEmail": true
+        }
+    }
+
+**COMING SOON:** Example request to depart a member by email.  
+
+    {
+        "email": first.last@domain.com,
+        "options": {
+            "sendFarewellEmail": false
         }
     }
