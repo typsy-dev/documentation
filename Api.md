@@ -1,3 +1,5 @@
+<base target="_blank">
+
 # API
 Typsy provides an API for basic operations on Members (the users within your Account).
 
@@ -26,7 +28,7 @@ The value is created by concatenating your **Typsy Key** with the **UTC timestam
 
 If your Typsy Key is **4de6bcec-9ebe-4ba0-8040-48ce64949d31** and the UTC timestamp is **2018-11-14T11:19:03.7269943Z** then you concatenate as follows:
 
-{KEY}:{TIMESTAMP}
+	{KEY}:{TIMESTAMP}
 
 	4de6bcec-9ebe-4ba0-8040-48ce64949d31:2018-11-14T11:19:03.7269943Z
 
@@ -40,3 +42,6 @@ This can be demonstrated/tested using the following tool: http://beautifytools.c
 1. Where it says 'Enter message here' place: 4de6bcec-9ebe-4ba0-8040-48ce64949d31:2018-11-14T11:19:03.7269943Z
 2. Where it says 'Secret key' place: 4de6bcec-9ebe-4ba0-8040-48ce64949d31
 3. Select alogorithim: sha256
+
+
+
