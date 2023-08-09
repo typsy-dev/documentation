@@ -14,15 +14,25 @@ Typsy will provide you with the following items:
 1. Typsy Key: A unique key used to generate a hash.  The key is in the following format: 4de6bcec-9ebe-4ba0-8040-48ce64949d31
 2. Typsy Account ID: A unique numeric ID that identifies your account. E.g. 213
 
-Each request to the API requires a selection of Header values for authentication.
-
-1. Typsy-Key: <INSERT HMACSHA256 HASH OF TYPSY KEY AND TIMESTAMP>
-2. Typsy-Timestamp: <INSERT UTC TIMESTAMP>
-3. Typsy-Account-Id: <INSERT TYPSY ACCOUNT ID>
-
 ### Generating the HMAC SHA256 Hash
-#### Typsy-Key
-The value for the Typsy-Key header value is a Hash of your Typsy Key and a UTC timestamp.  
+The following values are required to produce the hash which is included with each request.
+
+1. UTC Timestamp
+2. Typsy Account Id
+3. Typsy Key
+
+#### UTC Timestamp
+The timestamp must be in the following format: yyyy-MM-ddTHH:mm:SS.fffffffZ and must be the current time.
+
+In C# this is generated using the following line of code:
+
+    DateTime.UtcNow.ToString("O");
+
+#### Typsy Account Id
+Typsy will provide a unique Account Id to include with each request.  The value is numeric, e.g. 123
+
+#### Typsy Public Key
+The value for the Typsy-Key header value is a Hash of your Typsy Key and UTC timestamp.  
 
 The value is created by concatenating your **Typsy Key** with the **UTC timestamp**. The hash must be generated for each request as it contains a timestamp.
 
@@ -45,19 +55,13 @@ This can be demonstrated/tested using the following tool: http://beautifytools.c
 
 ![image](https://github.com/typsy-dev/documentation/assets/35910839/8e947f0d-a5ad-4426-b6fa-53643649cc8f)
 
-#### Typsy-Timestamp
-The timestamp must be in the following format: yyyy-MM-ddTHH:mm:SS.fffffffZ
-
-In C# this is generated using the following line of code:
-
-    DateTime.UtcNow.ToString("O");
-
-#### Typsy-Account-Id
-Typsy will provide a unique Account Id to include with each request.  The value is numeric, e.g. 123
-
 ___
 
-These values must be added to the header of the request, see the following example from Postman.
+These values must be added to the header of each request, see the following example from Postman.
+
+1. Typsy-Timestamp: <INSERT UTC TIMESTAMP>
+2. Typsy-Account-Id: <INSERT TYPSY ACCOUNT ID>
+3. Typsy-Key: <INSERT HMACSHA256 HASH OF TYPSY KEY AND TIMESTAMP>
 
 ![image](https://github.com/typsy-dev/documentation/assets/35910839/52bdb4e2-0b96-4a2b-8ef5-7cbbd7665a3a)
 
