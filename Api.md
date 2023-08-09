@@ -55,6 +55,12 @@ In C# this is generated using the following line of code:
 #### Typsy-Account-Id
 Typsy will provide a unique Account Id to include with each request.  The value is numeric, e.g. 123
 
+___
+
+These values must be added to the header of the request, see the following example from Postman.
+
+![image](https://github.com/typsy-dev/documentation/assets/35910839/52bdb4e2-0b96-4a2b-8ef5-7cbbd7665a3a)
+
 ## Member create
 
 ### Endpoint
