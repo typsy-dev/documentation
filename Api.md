@@ -43,5 +43,6 @@ This can be demonstrated/tested using the following tool: http://beautifytools.c
 2. Where it says 'Secret key' place: 4de6bcec-9ebe-4ba0-8040-48ce64949d31
 3. Select alogorithim: sha256
 
+![image](https://github.com/typsy-dev/documentation/assets/35910839/8e947f0d-a5ad-4426-b6fa-53643649cc8f)
 
 
