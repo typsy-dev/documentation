@@ -80,7 +80,7 @@ These values must be added to the header of each request, see the following exam
 POST to https://api.typsy.com/member/create
 
 ### Request
-Example request to create a member.  
+Example request to create a member (minimum information).  
 
 	{
         "firstName": "FirstName",
@@ -90,13 +90,34 @@ Example request to create a member.
             {
                 "name": "Venue A",
                 "roles": [
-                    "manager"
+                    "member"
+                ]
+            }
+        ],
+        "options": {
+            "sendInvitation": false,
+            "createStructuresIfNotExist": true,
+            "reactivateIfDeparted": false
+        }
+    }
+
+Example request to create a member (additional information).  
+
+	{
+        "firstName": "FirstName",
+        "lastName": "LastName",
+        "email": "first.last@domain.com",
+        "structures": [
+            {
+                "name": "Venue A",
+                "roles": [
+                    "member"
                 ]
             },
             {
                 "name": "Venue B",
                 "roles": [
-                    "member"
+                    "manager"
                 ]
             }
         ],
