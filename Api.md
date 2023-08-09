@@ -45,4 +45,46 @@ This can be demonstrated/tested using the following tool: http://beautifytools.c
 
 ![image](https://github.com/typsy-dev/documentation/assets/35910839/8e947f0d-a5ad-4426-b6fa-53643649cc8f)
 
+## Member create
 
+### Endpoint
+POST to https://api.typsy.com/member/create
+
+Example request to create a member.
+
+	{
+        "firstName": "FirstName",
+        "lastName": "LastName",
+        "email": "apiuser@typsy.com",
+        "structures": [
+            {
+                "name": "Venue A",
+                "roles": [
+                    "manager"
+                ]
+            },
+            {
+                "name": "Venue B",
+                "roles": [
+                    "member"
+                ]
+            }
+        ],
+        "teams": [
+            {
+                "name": "Team A"
+            }
+        ],
+        "claims": [
+            {
+                "key": "external_id",
+                "value": "12345678910"
+            }
+        ],
+        "options": {
+            "sendInvitation": false,
+            "createStructuresIfNotExist": true,
+            "createTeamsIfNotExist": true,
+            "reactivateIfDeparted": false
+        }
+    }
