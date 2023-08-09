@@ -61,6 +61,11 @@ This can be demonstrated/tested using the following tool: http://beautifytools.c
 
 ___
 
+##### Generating the encrypted key
+Here is a [code sample](https://github.com/typsy-dev/web-player/blob/master/asp-net-core/asp-net-core/Utilities/EncryptionHelper.cs) in C# that demonstrates how to create the encrypted key.
+
+___
+
 These values must be added to the header of each request, see the following example from Postman.
 
 1. Typsy-Timestamp: <INSERT UTC TIMESTAMP>
