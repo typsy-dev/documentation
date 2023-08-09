@@ -45,6 +45,10 @@ This can be demonstrated/tested using the following tool: http://beautifytools.c
 
 ![image](https://github.com/typsy-dev/documentation/assets/35910839/8e947f0d-a5ad-4426-b6fa-53643649cc8f)
 
+These values must be added to the header of the request, see the following example from Postman.
+
+![image](https://github.com/typsy-dev/documentation/assets/35910839/52bdb4e2-0b96-4a2b-8ef5-7cbbd7665a3a)
+
 ## Member create
 
 ### Endpoint
