@@ -35,7 +35,7 @@ There are multiple ways that the SSO process can be initiated.
 ### Login with an email from known domain name
 If the user is logging in with an email address that uses a company domain name then the authentication process will automatically redirect to the IDP.
 
-For example, if SSO is connected to an account that has the acmehotel.com domain name and a user has the email address name@acmehotel.com then the Typsy login screen will recognize that the user must be redirected to their IDP.
+For example, if SSO is connected to an account that has the **acmehotel.com** domain name and a user has the email address **name@acmehotel.com** then the Typsy login screen will recognize that the user must be redirected to their IDP.
 
 ### Force login with SSO
 Some customers provide a link on their Intranet or Learning Management System (LMS) to Typsy.  This link can be used to force the SSO process.
@@ -43,4 +43,4 @@ Some customers provide a link on their Intranet or Learning Management System (L
 - A user will access Typsy via the url - https://member.typsy.com?idp=[unique-idp-created-for-the-client-by-Typsy]
 - When the user enters the above url in the browser, Typsy (SP) will redirect the user to the client LMS (IDP).
 
-Alternatively a customer can setup https://typsy.company.com with a redirect to https://member.typsy.com?idp=[unique-idp-created-for-the-client-by-Typsy]
+Alternatively a customer can setup **https://typsy.acmehotel.com** with a redirect to https://member.typsy.com?idp=[unique-idp-created-for-the-client-by-Typsy]
