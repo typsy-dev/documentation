@@ -74,6 +74,18 @@ These values must be added to the header of each request, see the following exam
 
 ![image](https://github.com/typsy-dev/documentation/assets/35910839/52bdb4e2-0b96-4a2b-8ef5-7cbbd7665a3a)
 
+## Validate Authentication
+A request can be sent to validate that authentication is working correctly.
+
+### Endpoint
+GET to https://api.typsy.com/member/authenticated
+
+### Request
+Send an empty request but with all the required parameters for authentication.
+
+### Response
+If authentication has been successful you will be returned a 200 status code.  If you receive a 40x status code then investigate if all the required parameters for authentication have been constructed correctly and provided in the request.
+
 ## Member create
 
 ### Endpoint
