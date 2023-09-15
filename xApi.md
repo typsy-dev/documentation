@@ -3,10 +3,12 @@ Typsy supports publishing xApi statements when certain learning events are compl
 
 Typsy customers can subscribe to these messages and save the information in their own Learning Management System (LMS) and/or Reporting System (e.g a data warehouse).
 
+It's important to understand that xApi (even though it has the term 'Api' within it) is **not** an Api hosted by Typsy that you make requests to.  xApi is a standard (or schema) for describing a JSON message that Typsy will 'push' to you, much like how a [Webhook](https://en.wikipedia.org/wiki/Webhook) functions.
+
 For more information about xApi visit https://xapi.com/statements-101
 
 ## Supported statements
-Typsy currently supports **progressed** and **completed** [verbs](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) for Courses.
+Typsy currently supports **progressed** and **completed** [verbs](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) for Courses & Lessons.
 
 By default, these verbs use a Typsy namespace (e.g. http://xapi.typsy.com/verbs/completed). The messages can also be provided with the [ADLNET namespace](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) (e.g. https://adlnet.gov/expapi/verbs/completed)
 
