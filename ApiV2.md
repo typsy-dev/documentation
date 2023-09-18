@@ -175,13 +175,13 @@ Used to create child accounts with in a parent account
 POST to https://api.typsy.com/v2/accounts/create
 
 ### Request
- name: Name of your property
- vanityName: The name of the property that the Users will see
- timezoneInfoId: The timezone which the property operates in (https://stackoverflow.com/questions/7908343/list-of-timezone-ids-for-use-with-findtimezonebyid-in-c)
- country: 2 letter country code the property resides in (https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
- identifier: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
- structures: Used for creating venues/departments/groups within your account to sort your Users into - optional, structures can also be created via the Users API
- teams: Used for creating teams within your account to sort your Users into - optional, teams can also be created via the Users API
+ - name: Name of your property
+ - vanityName: The name of the property that the Users will see
+ - timezoneInfoId: The timezone which the property operates in (https://stackoverflow.com/questions/7908343/list-of-timezone-ids-for-use-with-findtimezonebyid-in-c)
+ - country: 2 letter country code the property resides in (https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
+ - identifier: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
+ - structures: Used for creating venues/departments/groups within your account to sort your Users into - optional, structures can also be created via the Users API
+ - teams: Used for creating teams within your account to sort your Users into - optional, teams can also be created via the Users API
 
 ```
 {
