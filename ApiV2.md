@@ -66,7 +66,7 @@ This can be demonstrated/tested using the following tool: http://beautifytools.c
 2. Where it says 'Secret key' place: a1b2c3d4e5f6g7h8i9k10
 3. Select alogorithim: sha256
 
-![image](/typsy-dev/documentation/assets/hmac_generation.png)
+![image](https://github.com/typsy-dev/documentation/blob/master/assets/hmac_generation.png)
 
 ___
 
@@ -81,7 +81,7 @@ These values must be added to the header of each request, see the following exam
 2. Typsy-Public-Key: <INSERT PUBLIC API KEY>
 3. Typsy-Key: <INSERT HMACSHA256 HASH OF PRIVATE KEY AND TIMESTAMP>
 
-![image](/typsy-dev/documentation/assets/postman_headers.png)
+![image](https://github.com/typsy-dev/documentation/blob/master/assets/postman_headers.png)
 
 ## Validate Authentication
 A request can be sent to validate that authentication is working correctly.
