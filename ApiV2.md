@@ -11,12 +11,12 @@ Authenticate
 User API
 1. Create a user (assign a license to a new user)
 2. Depart a user (removes the assigned license and prevents login)
-3. Add Claims to a user
-4. Remove Claims from a user
-5. Add a user to a Structure
-6. Remove a user from a Structure
-7. Add a user to a Team
-8. Remove a user from a team
+3. Add a user to a Structure
+4. Remove a user from a Structure
+5. Add a user to a Team
+6. Remove a user from a team
+7. Add Claims to a user
+8. Remove Claims from a user
 
 Account API
 1. Create a new child account
@@ -101,73 +101,316 @@ If authentication has been successful you will be returned a 200 status code.  I
 POST to https://api.typsy.com/v2/users/create
 
 ### Request
-
+Example request to create a user (minimum information).  
+```
+{
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "email": "first.last@domain.com",
+    "structures": [
+        {
+            "name": "Venue A",
+            "role": "member"
+        }
+    ],
+    "options": {
+        "sendInvitation": false,
+        "createStructuresIfNotExist": true,
+        "reactivateIfDeparted": false
+    }
+}
+```
+Example request to create a user (additional information).  
+```
+{
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "email": "first.last@domain.com",
+    "structures": [
+        {
+            "name": "Venue A",
+            "role": "member"
+        },
+        {
+            "name": "Venue B",
+            "role": "manager"
+        }
+    ],
+    "teams": [
+        {
+            "name": "Team A"
+        }
+    ],
+    "claims": [
+        {
+            "key": "external_id",
+            "value": "12345678910"
+        }
+    ],
+    "options": {
+        "sendInvitation": false,
+        "createStructuresIfNotExist": true,
+        "createTeamsIfNotExist": true,
+        "reactivateIfDeparted": false
+    }
+}
+```  
 ### Response
-
-## User update
+Example response where create a user request has been successful.
+```
+{
+    "requestId": "a2e553c0-c963-4bdd-87de-1805122740e6",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/a2e553c0-c963-4bdd-87de-1805122740e6"
+}
+```
+## User depart
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/update
+POST to https://api.typsy.com/v2/users/depart
 
 ### Request
-
+Example request to depart a user by email.  
+```
+{
+    "email": first.last@domain.com,
+    "options": {
+        "sendFarewellEmail": false
+    }
+}
+```
 ### Response
-
+Example response where depart a user request has been successful.
+```
+{
+    "requestId": "f1c8c78c-78f0-4b50-af09-df0a14dc3759",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/f1c8c78c-78f0-4b50-af09-df0a14dc3759"
+}
+```
 ## User add teams
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/update/teams/add
+POST to https://api.typsy.com/v2/users/teams/add
 
 ### Request
-
+Example request to add teams to a user by email. 
+```
+{
+    "email": "first.last@domain.com",
+    "teams": [
+        {
+            "name": "Team A"
+        }
+    ],
+    "options": {
+        "createTeamsIfNotExist": true,
+    }
+}
+```
 ### Response
-
+Example response where add teams to a user request has been successful.
+```
+{
+    "requestId": "1135fd80-ac65-41b9-8db5-f7c2f379e9ab",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/1135fd80-ac65-41b9-8db5-f7c2f379e9ab"
+}
+```
 ## User remove teams
-
+Example request to remove teams from a user by email. 
+```
+{
+    "email": "first.last@domain.com",
+    "teams": [
+        {
+            "name": "Team A"
+        }
+    ],
+    "options": {
+        "continueIfNotInTeam": true,
+    }
+}
+```
 ### Endpoint
-POST to https://api.typsy.com/v2/users/update/teams/remove
+POST to https://api.typsy.com/v2/users/teams/remove
 
 ### Request
 
 ### Response
-
+Example response where remove teams from a user request has been successful.
+```
+{
+    "requestId": "cf74d64e-bf7b-4b35-bee9-427c16ca051b",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/cf74d64e-bf7b-4b35-bee9-427c16ca051b"
+}
+```
 ## User add structures
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/update/structures/add
+POST to https://api.typsy.com/v2/users/structures/add
 
 ### Request
-
+Example request to add structures to a user by email.  
+```
+{
+    "email": "first.last@domain.com",
+    "structures": [
+        {
+            "name": "Venue A",
+            "role": "member"
+        }
+    ],
+    "options": {
+        "createStructuresIfNotExist": true,
+    }
+}
+```
 ### Response
-
+Example response where add structures to a user request has been successful.
+```
+{
+    "requestId": "8bd1e102-95d1-4965-a9c3-a73a5fc88101",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/8bd1e102-95d1-4965-a9c3-a73a5fc88101"
+}
+```
 ## User remove structures
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/update/structures/remove
+POST to https://api.typsy.com/v2/users/structures/remove
 
 ### Request
-
+Example request to remove structures from a user by email. 
+```
+{
+    "email": "first.last@domain.com",
+    "structures": [
+        {
+            "name": "Venue A",
+            "role": "member"
+        }
+    ],
+    "options": {
+        "continueIfNotInStruture": true,
+    }
+}
+```
 ### Response
-
+Example response where remove structures from a user request has been successful.
+```
+{
+    "requestId": "3b332916-62d8-4a95-a6c7-f83217f3e2ed",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/3b332916-62d8-4a95-a6c7-f83217f3e2ed"
+}
+```
 ## User add claims
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/update/claims/add
+POST to https://api.typsy.com/v2/users/claims/add
+
+### Request
+Example request to add claims to a user by email. 
+```
+{
+    "email": "first.last@domain.com",
+    "claims": [
+        {
+            "key": "external_id",
+            "value": "12345678910"
+        }
+    ]
+}
+```
+### Response
+Example response where add claims to a user request has been successful.
+```
+{
+    "requestId": "e20f2b42-cfdc-434f-a616-710088da4e00",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/e20f2b42-cfdc-434f-a616-710088da4e00"
+}
+```
+## User remove claims
+Example request to remove claims from a user by email. 
+```
+{
+    "email": "first.last@domain.com",
+    "claims": [
+        {
+            "key": "external_id",
+            "value": "12345678910"
+        }
+    ]
+}
+```
+### Endpoint
+POST to https://api.typsy.com/v2/users/claims/remove
 
 ### Request
 
 ### Response
-
-## User remove claims
+Example response where remove claims from a user request has been successful.
+```
+{
+    "requestId": "580db06c-93ea-4c67-9d05-750530180c6c",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/580db06c-93ea-4c67-9d05-750530180c6c"
+}
+```
+## Request Status
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/update/claims/remove
+GET to https://api.typsy.com/v2/users/request-status/{requestId}
 
-### Request
+#### Request not processed yet
+If the initial request has not yet been processed you will receive a [204 No Content](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204) result.  Wait a minute and make another request.
 
-### Response
-
-
+#### Request processed successfully
+Example response where the user create request has been successful.
+```
+{
+    "requestId": "a2e553c0-c963-4bdd-87de-1805122740e6",
+    "status": "success",
+    "errors": [],
+    "success": true
+    "accountId": 1234567
+}
+```
+#### Bad request
+Example response where the user create request has failed.
+```
+{
+    "requestId": "a2e553c0-c963-4bdd-87de-1805122740e6",
+    "status": "failed",
+    "errors": [
+        {
+            "code": "user_already_exists",
+            "description": "A user with the email EMAIL already exists within your account."
+        }
+    ],
+    "success": false
+    "accountId": 1234567
+}
+```
 ## Account create
 Used to create child accounts with in a parent account
 
