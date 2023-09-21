@@ -23,8 +23,8 @@ Account API
 
 ## Authentication
 Typsy will provide you with the following items:
-1. Public API Key: A unique key used to generate a hash.  The key is in the following format: aaa00000-0a0a-0000-a0aa-000a0000a00a
-2. Private API Key: 0a00a000aa0a0a0a0000a0000a00a000
+1. Public API Key: A unique key used to generate the hash. The key is in the following format: aaa00000-0a0a-0000-a0aa-000a0000a00a
+2. Private API Key: A unique key used as part of the hash. The key is in  the following format: 0a00a000aa0a0a0a0000a0000a00a000
 
 ### Generating the HMAC SHA256 Hash
 The following values are required to produce the hash which is included with each request.
