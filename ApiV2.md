@@ -100,7 +100,18 @@ If authentication has been successful you will be returned a 200 status code.  I
 ### Endpoint
 POST to https://api.typsy.com/v2/users/create
 
+### Header
+Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs. 
+
 ### Request
+- firstName: The first name of the user
+- lastName: The last name of the user
+- email: The email of the user
+- structures: Used for adding the user into venues/departments/groups within your account
+- teams: Used for adding the user into teams within your account - optional, 
+- claims: Used for adding the claims for the user - optional, 
+- options: Used to enable certain options to perform
+
 Example request to create a user (minimum information).  
 ```
 {
@@ -145,6 +156,7 @@ Example request to create a user (additional information).
         {
             "key": "external_id",
             "value": "12345678910"
+            "issuer": "IssuerName"
         }
     ],
     "options": {
@@ -171,7 +183,13 @@ Example response where create a user request has been successful.
 ### Endpoint
 POST to https://api.typsy.com/v2/users/depart
 
+### Header
+Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
 ### Request
+- email: The email of the user
+- options: Used to enable certain options to perform
+  
 Example request to depart a user by email.  
 ```
 {
@@ -197,7 +215,14 @@ Example response where depart a user request has been successful.
 ### Endpoint
 POST to https://api.typsy.com/v2/users/teams/add
 
+### Header
+Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
 ### Request
+- email: The email of the user
+- teams: Used for adding the user into teams within your account - optional, 
+- options: Used to enable certain options to perform
+
 Example request to add teams to a user by email. 
 ```
 {
@@ -224,6 +249,18 @@ Example response where add teams to a user request has been successful.
 }
 ```
 ## User remove teams
+
+### Endpoint
+POST to https://api.typsy.com/v2/users/teams/remove
+
+### Header
+Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
+### Request
+- email: The email of the user
+- teams: Used for adding the user into teams within your account - optional, 
+- options: Used to enable certain options to perform
+
 Example request to remove teams from a user by email. 
 ```
 {
@@ -238,11 +275,6 @@ Example request to remove teams from a user by email.
     }
 }
 ```
-### Endpoint
-POST to https://api.typsy.com/v2/users/teams/remove
-
-### Request
-
 ### Response
 Example response where remove teams from a user request has been successful.
 ```
@@ -259,7 +291,14 @@ Example response where remove teams from a user request has been successful.
 ### Endpoint
 POST to https://api.typsy.com/v2/users/structures/add
 
+### Header
+Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
 ### Request
+- email: The email of the user
+- structures: Used for adding the user into venues/departments/groups within your account
+- options: Used to enable certain options to perform
+
 Example request to add structures to a user by email.  
 ```
 {
@@ -291,7 +330,14 @@ Example response where add structures to a user request has been successful.
 ### Endpoint
 POST to https://api.typsy.com/v2/users/structures/remove
 
+### Header
+Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
 ### Request
+- email: The email of the user
+- structures: Used for adding the user into venues/departments/groups within your account
+- options: Used to enable certain options to perform
+
 Example request to remove structures from a user by email. 
 ```
 {
@@ -299,7 +345,6 @@ Example request to remove structures from a user by email.
     "structures": [
         {
             "name": "Venue A",
-            "role": "member"
         }
     ],
     "options": {
@@ -323,7 +368,13 @@ Example response where remove structures from a user request has been successful
 ### Endpoint
 POST to https://api.typsy.com/v2/users/claims/add
 
+### Header
+Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
 ### Request
+- email: The email of the user
+- claims: Used for adding the claims for the user - optional, 
+
 Example request to add claims to a user by email. 
 ```
 {
@@ -331,7 +382,8 @@ Example request to add claims to a user by email.
     "claims": [
         {
             "key": "external_id",
-            "value": "12345678910"
+            "value": "12345678910",
+	    "issuer": "IssuerName"
         }
     ]
 }
@@ -348,6 +400,17 @@ Example response where add claims to a user request has been successful.
 }
 ```
 ## User remove claims
+
+### Endpoint
+POST to https://api.typsy.com/v2/users/claims/remove
+
+### Header
+Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
+### Request
+- email: The email of the user
+- claims: Used for adding the claims for the user - optional, 
+
 Example request to remove claims from a user by email. 
 ```
 {
@@ -355,16 +418,12 @@ Example request to remove claims from a user by email.
     "claims": [
         {
             "key": "external_id",
-            "value": "12345678910"
+            "value": "12345678910",
+	    "issuer": "IssuerName"
         }
     ]
 }
 ```
-### Endpoint
-POST to https://api.typsy.com/v2/users/claims/remove
-
-### Request
-
 ### Response
 Example response where remove claims from a user request has been successful.
 ```
