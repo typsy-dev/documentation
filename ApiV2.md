@@ -109,7 +109,8 @@ Typsy-Account-Identifier : The internal code your company uses to identify its p
 - email: The email of the user
 - structures: Used for adding the user into venues/departments/groups within your account
 - teams: Used for adding the user into teams within your account - optional, 
-- claims: Used for adding the claims for the user - optional, 
+- claims: Used for adding the claims for the user - optional,
+- ssoUserIdentifier: Used for adding the user identifier for SSO login - required for SSO connected accounts only
 - options: Used to enable certain options to perform
 
 Example request to create a user (minimum information).  
@@ -159,6 +160,10 @@ Example request to create a user (additional information).
             "issuer": "IssuerName"
         }
     ],
+    "ssoUserIdentifier": {
+        "providerName": "ProviderName",
+        "providerKey": "123456",
+    }
     "options": {
         "sendInvitation": false,
         "createStructuresIfNotExist": true,
