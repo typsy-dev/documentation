@@ -392,7 +392,6 @@ Example response where the user create request has been successful.
     "status": "success",
     "errors": [],
     "success": true
-    "accountId": 1234567
 }
 ```
 #### Bad request
@@ -408,7 +407,6 @@ Example response where the user create request has failed.
         }
     ],
     "success": false
-    "accountId": 1234567
 }
 ```
 ## Account create
@@ -484,7 +482,6 @@ Example response where the account create request has been successful.
     "status": "success",
     "errors": [],
     "success": true
-    "accountId": 1234567
 }
 ```
 
