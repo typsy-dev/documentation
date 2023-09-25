@@ -423,7 +423,6 @@ Example request to remove claims from a user by email.
     "claims": [
         {
             "key": "external_id",
-            "value": "12345678910",
 	    "issuer": "IssuerName"
         }
     ]
