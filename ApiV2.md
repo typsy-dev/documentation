@@ -160,10 +160,7 @@ Example request to create a user (additional information).
             "issuer": "IssuerName"
         }
     ],
-    "ssoUserIdentifier": {
-        "providerName": "ProviderName",
-        "providerKey": "123456",
-    }
+    "ssoUserIdentifier": "123456",
     "options": {
         "sendInvitation": false,
         "createStructuresIfNotExist": true,
