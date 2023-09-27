@@ -97,13 +97,13 @@ If authentication has been successful you will be returned a 200 status code.  I
 
 # Users
 
+If you're a master account you will need to add this header to your requests
+- Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
 ## User create
 
 ### Endpoint
 POST to https://api.typsy.com/v2/users/create
-
-### Header
-Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs. 
 
 ### Request
 - firstName: The first name of the user
@@ -171,6 +171,7 @@ Example request to create a user (additional information).
     }
 }
 ```  
+
 ### Response
 Example response where create a user request has been successful.
 ```
@@ -187,9 +188,6 @@ Example response where create a user request has been successful.
 ### Endpoint
 POST to https://api.typsy.com/v2/users/depart
 
-### Header
-Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
-
 ### Request
 - email: The email of the user
 - options: Used to enable certain options to perform
@@ -203,6 +201,7 @@ Example request to depart a user by email.
     }
 }
 ```
+
 ### Response
 Example response where depart a user request has been successful.
 ```
@@ -214,13 +213,11 @@ Example response where depart a user request has been successful.
     "statusUrl": "https://api.typsy.com/v2/users/request-status/f1c8c78c-78f0-4b50-af09-df0a14dc3759"
 }
 ```
+
 ## User add teams
 
 ### Endpoint
 POST to https://api.typsy.com/v2/users/teams/add
-
-### Header
-Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
 
 ### Request
 - email: The email of the user
@@ -241,6 +238,7 @@ Example request to add teams to a user by email.
     }
 }
 ```
+
 ### Response
 Example response where add teams to a user request has been successful.
 ```
@@ -256,9 +254,6 @@ Example response where add teams to a user request has been successful.
 
 ### Endpoint
 POST to https://api.typsy.com/v2/users/teams/remove
-
-### Header
-Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
 
 ### Request
 - email: The email of the user
@@ -279,6 +274,7 @@ Example request to remove teams from a user by email.
     }
 }
 ```
+
 ### Response
 Example response where remove teams from a user request has been successful.
 ```
@@ -294,9 +290,6 @@ Example response where remove teams from a user request has been successful.
 
 ### Endpoint
 POST to https://api.typsy.com/v2/users/structures/add
-
-### Header
-Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
 
 ### Request
 - email: The email of the user
@@ -318,6 +311,7 @@ Example request to add structures to a user by email.
     }
 }
 ```
+
 ### Response
 Example response where add structures to a user request has been successful.
 ```
@@ -333,9 +327,6 @@ Example response where add structures to a user request has been successful.
 
 ### Endpoint
 POST to https://api.typsy.com/v2/users/structures/remove
-
-### Header
-Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
 
 ### Request
 - email: The email of the user
@@ -356,6 +347,7 @@ Example request to remove structures from a user by email.
     }
 }
 ```
+
 ### Response
 Example response where remove structures from a user request has been successful.
 ```
@@ -371,9 +363,6 @@ Example response where remove structures from a user request has been successful
 
 ### Endpoint
 POST to https://api.typsy.com/v2/users/claims/add
-
-### Header
-Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
 
 ### Request
 - email: The email of the user
@@ -392,6 +381,7 @@ Example request to add claims to a user by email.
     ]
 }
 ```
+
 ### Response
 Example response where add claims to a user request has been successful.
 ```
@@ -403,13 +393,11 @@ Example response where add claims to a user request has been successful.
     "statusUrl": "https://api.typsy.com/v2/users/request-status/e20f2b42-cfdc-434f-a616-710088da4e00"
 }
 ```
+
 ## User remove claims
 
 ### Endpoint
 POST to https://api.typsy.com/v2/users/claims/remove
-
-### Header
-Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
 
 ### Request
 - email: The email of the user
@@ -427,6 +415,7 @@ Example request to remove claims from a user by email.
     ]
 }
 ```
+
 ### Response
 Example response where remove claims from a user request has been successful.
 ```
@@ -438,6 +427,7 @@ Example response where remove claims from a user request has been successful.
     "statusUrl": "https://api.typsy.com/v2/users/request-status/580db06c-93ea-4c67-9d05-750530180c6c"
 }
 ```
+
 ## Request Status
 
 ### Endpoint
@@ -456,6 +446,7 @@ Example response where the user create request has been successful.
     "success": true
 }
 ```
+
 #### Bad request
 Example response where the user create request has failed.
 ```
@@ -471,6 +462,107 @@ Example response where the user create request has failed.
     "success": false
 }
 ```
+
+## List Users
+
+### Endpoint
+GET to https://api.typsy.com/v2/users?offset=0&limit=25
+
+### Request
+ - offset: How many records to skip. This is used to page through records.
+ - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side.
+
+### Response
+- users: A collection of Users
+- metadata:
+    - total - total amount of users within your child account
+    - limit - how many users were requested
+    - offset - how many users were skipped
+```
+{
+    "users": [
+        {
+	    "firstName": "FirstName",
+	    "lastName": "LastName",
+	    "email": "first.last@domain.com",
+	    "structures": [
+	        {
+	            "name": "Venue A",
+	            "role": "member"
+	        },
+	        {
+	            "name": "Venue B",
+	            "role": "manager"
+	        }
+	    ],
+	    "teams": [
+	        {
+	            "name": "Team A"
+	        }
+	    ],
+	    "claims": [
+	        {
+	            "key": "external_id",
+	            "value": "12345678910"
+	            "issuer": "IssuerName"
+	        }
+	    ],
+	    "ssoUserIdentifier": "123456",
+	}
+    ],
+    "metadata": {
+        "total": 3,
+        "limit": 1,
+        "offset": 0
+    }
+}
+```
+
+## Get User
+
+### Endpoint
+GET to https://api.typsy.com/v2/users/{email}
+
+### Request
+ - email: The email provided in the create user step
+
+### Response
+Returns an user object.
+
+```
+{
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "email": "first.last@domain.com",
+    "structures": [
+	{
+	    "name": "Venue A",
+	    "role": "member"
+	},
+	{
+	    "name": "Venue B",
+	    "role": "manager"
+	}
+    ],
+    "teams": [
+	{
+	    "name": "Team A"
+	}
+    ],
+    "claims": [
+	{
+	    "key": "external_id",
+	    "value": "12345678910"
+	    "issuer": "IssuerName"
+	}
+    ],
+    "ssoUserIdentifier": "123456",
+}
+```
+
+#### No user found
+
+A 204 No Content response will be returned if no user matching the email can be found within the account.
 
 # Accounts
 
