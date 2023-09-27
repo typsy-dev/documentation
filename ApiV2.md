@@ -671,7 +671,7 @@ GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
  - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side.
 
 ### Response
-- accounts: A collection of Accounts
+- accounts: A collection of AccountSummary objects
 - metadata:
     - total - total amount of accounts within your master account
     - limit - how many accounts were requested
@@ -685,22 +685,8 @@ GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
           "tzIdentifier": "Australia/Melbourne",
           "country": "AU",
           "identifier": "MEL_HOTEL1",
-          "structures": [
-            {
-              "name": "Hotel Restaurant"
-            },
-            {
-              "name": "Hotel Bar"
-            }
-          ],
-          "teams": [
-            {
-              "name": "Dishwashers"
-            },
-            {
-              "name": "Bartenders"
-            }
-          ]
+          "structureCount": 2,
+          "teamCount": 2
         }
     ],
     "metadata": {
@@ -720,7 +706,7 @@ GET to https://api.typsy.com/v2/accounts/{identifier}
  - identifier: The identifier provided in the create account step
 
 ### Response
-Returns an account object.
+Returns an AccountSummaryDetailed object.
 
 ```
 {
