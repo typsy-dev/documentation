@@ -568,3 +568,94 @@ Example response where the account create request has failed.
     "success": false
 }
 ```
+
+## List Accounts
+
+### Endpoint
+GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
+
+### Request
+ - offset: How many records to skip. This is used to page through records.
+ - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side.
+
+### Response
+- accounts: A collection of Accounts
+- metadata:
+    - total - total amount of accounts within your master account
+    - limit - how many accounts were requested
+    - offset - how many accounts were skipped
+```
+{
+    "accounts": [
+        {
+          "name": "My Account Pty Ltd",
+          "vanityName": "My Account",
+          "tzIdentifier": "Australia/Melbourne",
+          "country": "AU",
+          "identifier": "MEL_HOTEL1",
+          "structures": [
+            {
+              "name": "Hotel Restaurant"
+            },
+            {
+              "name": "Hotel Bar"
+            }
+          ],
+          "teams": [
+            {
+              "name": "Dishwashers"
+            },
+            {
+              "name": "Bartenders"
+            }
+          ]
+        }
+    ],
+    "metadata": {
+        "total": 13,
+        "limit": 1,
+        "offset": 0
+    }
+}
+```
+
+## Get Account
+
+### Endpoint
+GET to https://api.typsy.com/v2/accounts/{identifier}
+
+### Request
+ - identifier: The identifier provided in the create account step
+
+### Response
+Returns an account object.
+
+```
+{
+  "name": "My Account Pty Ltd",
+  "vanityName": "My Account",
+  "tzIdentifier": "Australia/Melbourne",
+  "country": "AU",
+  "identifier": "MEL_HOTEL1",
+  "structures": [
+    {
+      "name": "Hotel Restaurant"
+    },
+    {
+      "name": "Hotel Bar"
+    }
+  ],
+  "teams": [
+    {
+      "name": "Dishwashers"
+    },
+    {
+      "name": "Bartenders"
+    }
+  ]
+}
+```
+
+#### No account found
+
+A 204 No Content response will be returned if no account matching the identifier can be found within the requesting master account.
