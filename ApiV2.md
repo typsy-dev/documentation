@@ -95,6 +95,8 @@ Send an empty request but with all the required parameters for authentication.
 ### Response
 If authentication has been successful you will be returned a 200 status code.  If you receive a 40x status code then investigate if all the required parameters for authentication have been constructed correctly and provided in the request.
 
+# Users
+
 ## User create
 
 ### Endpoint
@@ -409,6 +411,9 @@ Example response where the user create request has failed.
     "success": false
 }
 ```
+
+# Accounts
+
 ## Account create
 Used to create child accounts with in a parent account
 
@@ -418,7 +423,7 @@ POST to https://api.typsy.com/v2/accounts/create
 ### Request
  - name: Name of your property
  - vanityName: The name of the property that the Users will see
- - timezoneInfoId: The timezone which the property operates in (https://stackoverflow.com/questions/7908343/list-of-timezone-ids-for-use-with-findtimezonebyid-in-c)
+ - tzIdentifier: The timezone which the property operates in (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
  - country: 2 letter country code the property resides in (https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
  - identifier: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
  - structures: Used for creating venues/departments/groups within your account to sort your Users into - optional, structures can also be created via the Users API
@@ -428,7 +433,7 @@ POST to https://api.typsy.com/v2/accounts/create
 {
   "name": "My Account Pty Ltd",
   "vanityName": "My Account",
-  "timezoneInfoId": "AUS Eastern Standard Time",
+  "tzIdentifier": "Australia/Melbourne",
   "country": "AU",
   "identifier": "MEL_HOTEL1",
   "structures": [
