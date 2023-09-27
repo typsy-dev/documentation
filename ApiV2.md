@@ -674,6 +674,7 @@ GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
 - accounts: A collection of AccountSummary objects
 - metadata:
     - total - total amount of accounts within your master account
+    - count - how many accounts were returned
     - limit - how many accounts were requested
     - offset - how many accounts were skipped
 ```
