@@ -473,45 +473,28 @@ GET to https://api.typsy.com/v2/users?offset=0&limit=25
  - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side.
 
 ### Response
-- users: A collection of Users
+- users: A collection of UserSummary objects
 - metadata:
-    - total - total amount of users within your child account
+    - total - total amount of users within your master account
+    - count - how many users were returned
     - limit - how many users were requested
     - offset - how many users were skipped
 ```
 {
     "users": [
-        {
+	{
 	    "firstName": "FirstName",
 	    "lastName": "LastName",
 	    "email": "first.last@domain.com",
-	    "structures": [
-	        {
-	            "name": "Venue A",
-	            "role": "member"
-	        },
-	        {
-	            "name": "Venue B",
-	            "role": "manager"
-	        }
-	    ],
-	    "teams": [
-	        {
-	            "name": "Team A"
-	        }
-	    ],
-	    "claims": [
-	        {
-	            "key": "external_id",
-	            "value": "12345678910"
-	            "issuer": "IssuerName"
-	        }
-	    ],
 	    "ssoUserIdentifier": "123456",
+	    "structureCount": 2,
+	    "teamCount": 2,
+	    "claimsCount": 1
 	}
     ],
     "metadata": {
         "total": 3,
+        "count": 1,
         "limit": 1,
         "offset": 0
     }
@@ -527,13 +510,14 @@ GET to https://api.typsy.com/v2/users/{email}
  - email: The email provided in the create user step
 
 ### Response
-Returns an user object.
+Returns an UserDetailed object.
 
 ```
 {
     "firstName": "FirstName",
     "lastName": "LastName",
     "email": "first.last@domain.com",
+    "ssoUserIdentifier": "123456",
     "structures": [
 	{
 	    "name": "Venue A",
@@ -556,7 +540,6 @@ Returns an user object.
 	    "issuer": "IssuerName"
 	}
     ],
-    "ssoUserIdentifier": "123456",
 }
 ```
 
