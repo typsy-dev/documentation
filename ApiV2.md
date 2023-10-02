@@ -17,9 +17,15 @@ User API
 6. Remove a user from a team
 7. Add Claims to a user
 8. Remove Claims from a user
+9. Get Users list
+10. Get a User
 
 Account API
 1. Create a new child account
+2. Add a Role to a User in a child account
+3. Remove a Role from a User in a child account
+4. Get Accounts list
+5. Get a Account
 
 ## Authentication
 Typsy will provide you with the following items:
@@ -504,10 +510,11 @@ GET to https://api.typsy.com/v2/users?offset=0&limit=25
 ## Get User
 
 ### Endpoint
-GET to https://api.typsy.com/v2/users/{email}
+POST to https://api.typsy.com/v2/users
 
 ### Request
- - email: The email provided in the create user step
+ - email: The email provided in the create user step (or)
+ - ssoUserIdentifier : The user identifier used for SSO login
 
 ### Response
 Returns an UserDetailed object.
@@ -641,6 +648,70 @@ Example response where the account create request has failed.
         }
     ],
     "success": false
+}
+```
+
+## Account role add 
+Used to add role to a user with in a child account
+
+If you're a master account you will need to add this header to your requests
+- Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
+### Endpoint
+POST to https://api.typsy.com/v2/accounts/roles/add
+
+### Request
+ - email: The email of the user
+ - role: The role user needs to be added to.
+```
+{
+    "email": "first.last@domain.com",
+    "role": "administrator"
+}
+```
+### Response
+
+Example response where the Account create request has been successful.
+
+```
+{
+    "requestId": "660c5f82-7bb0-4fa2-a6fa-0cabf7cd62b3",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/accounts/request-status/660c5f82-7bb0-4fa2-a6fa-0cabf7cd62b3"
+}
+```
+
+## Account role remove 
+Used to remove role from a user with in a child account
+
+If you're a master account you will need to add this header to your requests
+- Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+
+### Endpoint
+POST to https://api.typsy.com/v2/accounts/roles/remove
+
+### Request
+ - email: The email of the user
+ - role: The role user needs to be removed from.
+```
+{
+    "email": "first.last@domain.com",
+    "role": "administrator"
+}
+```
+### Response
+
+Example response where the Account create request has been successful.
+
+```
+{
+    "requestId": "b0116927-bebb-4f88-8e4f-f9f729f5027c",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/accounts/request-status/b0116927-bebb-4f88-8e4f-f9f729f5027c"
 }
 ```
 
