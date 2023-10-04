@@ -109,7 +109,7 @@ If you're a master account you will need to add this header to your requests
 ## User create
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/create
+POST to https://api.typsy.com/v2/users/workspace/create
 
 ### Request
 - firstName: The first name of the user
@@ -192,7 +192,7 @@ Example response where create a user request has been successful.
 ## User depart
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/depart
+POST to https://api.typsy.com/v2/users/workspace/depart
 
 ### Request
 - email: The email of the user
@@ -223,7 +223,7 @@ Example response where depart a user request has been successful.
 ## User add teams
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/teams/add
+POST to https://api.typsy.com/v2/users/workspace/teams/add
 
 ### Request
 - email: The email of the user
@@ -259,7 +259,7 @@ Example response where add teams to a user request has been successful.
 ## User remove teams
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/teams/remove
+POST to https://api.typsy.com/v2/users/workspace/teams/remove
 
 ### Request
 - email: The email of the user
@@ -295,7 +295,7 @@ Example response where remove teams from a user request has been successful.
 ## User add structures
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/structures/add
+POST to https://api.typsy.com/v2/users/workspace/structures/add
 
 ### Request
 - email: The email of the user
@@ -332,7 +332,7 @@ Example response where add structures to a user request has been successful.
 ## User remove structures
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/structures/remove
+POST to https://api.typsy.com/v2/users/workspace/structures/remove
 
 ### Request
 - email: The email of the user
@@ -368,7 +368,7 @@ Example response where remove structures from a user request has been successful
 ## User add claims
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/claims/add
+POST to https://api.typsy.com/v2/users/workspace/claims/add
 
 ### Request
 - email: The email of the user
@@ -403,7 +403,7 @@ Example response where add claims to a user request has been successful.
 ## User remove claims
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/claims/remove
+POST to https://api.typsy.com/v2/users/workspace/claims/remove
 
 ### Request
 - email: The email of the user
@@ -489,17 +489,21 @@ GET to https://api.typsy.com/v2/users?offset=0&limit=25
 {
     "users": [
 	{
+	    "identifier": "f12d3f0fa6b94c5fa9ce2934fefa0cc3"
 	    "firstName": "FirstName",
 	    "lastName": "LastName",
 	    "email": "first.last@domain.com",
 	    "ssoUserIdentifier": "123456",
-	    "structureCount": 2,
-	    "teamCount": 2,
-	    "claimsCount": 1
+	    "workspace": {
+		"identifier": "11844d3c366948f1b14ce3654a7795b2",
+	        "structureCount": 2,
+		"teamCount": 2,
+		"claimsCount": 1
+	    }
 	}
     ],
     "metadata": {
-        "total": 3,
+	"total": 3,
         "count": 1,
         "limit": 1,
         "offset": 0
@@ -510,7 +514,7 @@ GET to https://api.typsy.com/v2/users?offset=0&limit=25
 ## Get User
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users
+POST to https://api.typsy.com/v2/users/workspace
 
 ### Request
  - email: The email provided in the create user step (or)
@@ -521,32 +525,36 @@ Returns an UserDetailed object.
 
 ```
 {
+    "identifier": "f12d3f0fa6b94c5fa9ce2934fefa0cc3",
     "firstName": "FirstName",
     "lastName": "LastName",
     "email": "first.last@domain.com",
     "ssoUserIdentifier": "123456",
-    "structures": [
-	{
-	    "name": "Venue A",
-	    "role": "member"
-	},
-	{
-	    "name": "Venue B",
-	    "role": "manager"
-	}
-    ],
-    "teams": [
-	{
-	    "name": "Team A"
-	}
-    ],
-    "claims": [
-	{
-	    "key": "external_id",
-	    "value": "12345678910"
-	    "issuer": "IssuerName"
-	}
-    ],
+    "workspace": {
+	"identifier": "11844d3c366948f1b14ce3654a7795b2",
+	"structures": [
+	    {
+	        "name": "Venue A",
+	        "role": "member"
+	    },
+	    {
+	        "name": "Venue B",
+	        "role": "manager"
+	    }
+        ],
+        "teams": [
+	    {
+	        "name": "Team A"
+	    }
+        ],
+        "claims": [
+	    {
+	        "key": "external_id",
+	        "value": "12345678910"
+	        "issuer": "IssuerName"
+	    }
+        ]
+    }
 }
 ```
 
