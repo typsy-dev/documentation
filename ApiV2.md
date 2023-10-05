@@ -104,7 +104,9 @@ If authentication has been successful you will be returned a 200 status code.  I
 # Users
 
 If you're a master account you will need to add this header to your requests
-- Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+- Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs to.
+
+If there is an issue with locating the child account matching the identifier you provided, you will receive a 400 Bad Request response.
 
 ## User create
 
@@ -743,11 +745,11 @@ GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
 {
     "accounts": [
         {
+          "identifier": "MEL_HOTEL1",
           "name": "My Account Pty Ltd",
           "vanityName": "My Account",
           "tzIdentifier": "Australia/Melbourne",
           "country": "AU",
-          "identifier": "MEL_HOTEL1",
           "structureCount": 2,
           "teamCount": 2
         }
@@ -773,11 +775,11 @@ Returns an AccountSummaryDetailed object.
 
 ```
 {
+  "identifier": "MEL_HOTEL1",
   "name": "My Account Pty Ltd",
   "vanityName": "My Account",
   "tzIdentifier": "Australia/Melbourne",
   "country": "AU",
-  "identifier": "MEL_HOTEL1",
   "structures": [
     {
       "name": "Hotel Restaurant"
