@@ -374,7 +374,7 @@ POST to https://api.typsy.com/v2/users/workspace/claims/add
 
 ### Request
 - email: The email of the user
-- claims: Used for adding the claims for the user - optional, 
+- claims: Used for adding the claims for the user, 
 
 Example request to add claims to a user by email. 
 ```
@@ -409,7 +409,7 @@ POST to https://api.typsy.com/v2/users/workspace/claims/remove
 
 ### Request
 - email: The email of the user
-- claims: Used for adding the claims for the user - optional, 
+- claims: Used for adding the claims for the user, 
 
 Example request to remove claims from a user by email. 
 ```
