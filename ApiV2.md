@@ -114,14 +114,20 @@ If there is an issue with locating the child account matching the identifier you
 POST to https://api.typsy.com/v2/users/workspace/create
 
 ### Request
+Required
 - firstName: The first name of the user
 - lastName: The last name of the user
 - email: The email of the user
-- structures: Used for adding the user into venues/departments/groups within your account
-- teams: Used for adding the user into teams within your account - optional, 
+- structures: The collection of structures (venues/departments/groups) you wish to add the user to
+Optional
+- teams: The collection of teams you wish to add the user to, 
 - claims: Used for adding the claims for the user - optional,
 - ssoUserIdentifier: Used for adding the user identifier for SSO login - required for SSO connected accounts only
-- options: Used to enable certain options to perform
+- options:
+    - sendInvitation - sends an invitation to the user to claim their account. Default = false
+    -createStructuresIfNotExist - creates the structure within the account if it does not already exist. Default = true
+    - createTeamsIfNotExist - creates the team within the account if it does not already exist. Default = true
+    - reactivateIfDeparted - if the user was previously departed from this account it reactivates them within the account if set to true. If set to false, it will give you an error saying that the user was departed from this account. Default = false
 
 Example request to create a user (minimum information).  
 ```
@@ -197,8 +203,11 @@ Example response where create a user request has been successful.
 POST to https://api.typsy.com/v2/users/workspace/depart
 
 ### Request
+Required
 - email: The email of the user
-- options: Used to enable certain options to perform
+Optional
+- options:
+    - sendFarewellEmail: sends a farewell email after a period of time to the user after they have been departed, letting them know what has happened to their account and learning history. Default = false
   
 Example request to depart a user by email.  
 ```
@@ -228,9 +237,12 @@ Example response where depart a user request has been successful.
 POST to https://api.typsy.com/v2/users/workspace/teams/add
 
 ### Request
+Required
 - email: The email of the user
-- teams: Used for adding the user into teams within your account - optional, 
-- options: Used to enable certain options to perform
+- teams: The collection of teams you wish to add the user to
+Optional
+- options:
+    - createTeamsIfNotExist - creates the team within the account if it does not already exist. Default = true
 
 Example request to add teams to a user by email. 
 ```
@@ -264,9 +276,12 @@ Example response where add teams to a user request has been successful.
 POST to https://api.typsy.com/v2/users/workspace/teams/remove
 
 ### Request
+Required
 - email: The email of the user
-- teams: Used for selecting which team to remove the user from, 
-- options: Used to enable certain options to perform
+- teams: The collection of teams you wish to remove the user from
+Optional
+- options:
+    - continueIfNotInTeam: If the user is not in a team which they were requested to be removed from, the process will continue. If set to false, it will return an error telling you they are not in the team. Default = true
 
 Example request to remove teams from a user by email. 
 ```
@@ -300,9 +315,12 @@ Example response where remove teams from a user request has been successful.
 POST to https://api.typsy.com/v2/users/workspace/structures/add
 
 ### Request
+Required
 - email: The email of the user
-- structures: Used for adding the user into venues/departments/groups within your account
-- options: Used to enable certain options to perform
+- structures: The collection of structures (venues/departments/groups) you wish to add the user to
+Optional
+- options:
+    - createStructuresIfNotExist: creates the structure within the account if it does not already exist. Default = true
 
 Example request to add structures to a user by email.  
 ```
@@ -337,9 +355,12 @@ Example response where add structures to a user request has been successful.
 POST to https://api.typsy.com/v2/users/workspace/structures/remove
 
 ### Request
+Required
 - email: The email of the user
-- structures: Used for adding the user into venues/departments/groups within your account
-- options: Used to enable certain options to perform
+- structures: The collection of structures (venues/departments/groups) you wish to remove the user from
+Optional
+- options:
+    - continueIfNotInStructure: If the user is not in a structure which they were requested to be removed from, the process will continue. If set to false, it will return an error telling you they are not in the structure. Default = true
 
 Example request to remove structures from a user by email. 
 ```
@@ -373,8 +394,12 @@ Example response where remove structures from a user request has been successful
 POST to https://api.typsy.com/v2/users/workspace/claims/add
 
 ### Request
+Required
 - email: The email of the user
-- claims: Used for adding the claims for the user, 
+- claims: A collection of claims you wish to add the user to
+    - key: the name of your external id
+    - value: the value of your external id
+    - issuer: who issued the claim (often just your overall account name)
 
 Example request to add claims to a user by email. 
 ```
@@ -384,7 +409,7 @@ Example request to add claims to a user by email.
         {
             "key": "external_id",
             "value": "12345678910",
-	    "issuer": "IssuerName"
+            "issuer": "IssuerName"
         }
     ]
 }
@@ -408,8 +433,11 @@ Example response where add claims to a user request has been successful.
 POST to https://api.typsy.com/v2/users/workspace/claims/remove
 
 ### Request
+Required
 - email: The email of the user
-- claims: Used for adding the claims for the user, 
+- claims: A collection of claims you wish to add the user to
+    - key: the name of your external id
+    - issuer: who issued the claim (often just your overall account name)
 
 Example request to remove claims from a user by email. 
 ```
@@ -418,7 +446,7 @@ Example request to remove claims from a user by email.
     "claims": [
         {
             "key": "external_id",
-	    "issuer": "IssuerName"
+	        "issuer": "IssuerName"
         }
     ]
 }
@@ -477,8 +505,9 @@ Example response where the user create request has failed.
 GET to https://api.typsy.com/v2/users?offset=0&limit=25
 
 ### Request
- - offset: How many records to skip. This is used to page through records.
- - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side.
+Optional
+ - offset: How many records to skip. This is used to page through records. Default = 0
+ - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side. Default = 1
 
 ### Response
 - users: A collection of UserSummary objects
@@ -497,11 +526,11 @@ GET to https://api.typsy.com/v2/users?offset=0&limit=25
 	    "email": "first.last@domain.com",
 	    "ssoUserIdentifier": "123456",
 	    "workspace": {
-		"identifier": "11844d3c366948f1b14ce3654a7795b2",
-		"status": "Licensed",
-	        "structureCount": 2,
-		"teamCount": 2,
-		"claimsCount": 1
+    		"identifier": "11844d3c366948f1b14ce3654a7795b2",
+    		"status": "Licensed",
+            "structureCount": 2,
+    		"teamCount": 2,
+    		"claimsCount": 1
 	    }
 	}
     ],
@@ -520,6 +549,7 @@ GET to https://api.typsy.com/v2/users?offset=0&limit=25
 POST to https://api.typsy.com/v2/users/workspace
 
 ### Request
+Required:
  - email: The email provided in the create user step (or)
  - ssoUserIdentifier : The user identifier used for SSO login
 
@@ -575,13 +605,15 @@ Used to create child accounts with in a parent account
 POST to https://api.typsy.com/v2/accounts/create
 
 ### Request
+Required
  - name: Name of your property
  - vanityName: The name of the property that the Users will see
  - tzIdentifier: The timezone which the property operates in (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
  - country: 2 letter country code the property resides in (https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
  - identifier: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
- - structures: Used for creating venues/departments/groups within your account to sort your Users into - optional, structures can also be created via the Users API
- - teams: Used for creating teams within your account to sort your Users into - optional, teams can also be created via the Users API
+ Optional
+ - structures: Used for creating structures (venues/departments/groups) within your account to sort your Users into 
+ - teams: Used for creating teams within your account to sort your Users into
 
 ```
 {
@@ -673,8 +705,9 @@ If you're a master account you will need to add this header to your requests
 POST to https://api.typsy.com/v2/accounts/roles/add
 
 ### Request
+Required
  - email: The email of the user
- - role: The role user needs to be added to.
+ - role: The role user needs to be added to. Possible values: administrator
 ```
 {
     "email": "first.last@domain.com",
@@ -705,8 +738,9 @@ If you're a master account you will need to add this header to your requests
 POST to https://api.typsy.com/v2/accounts/roles/remove
 
 ### Request
+Required
  - email: The email of the user
- - role: The role user needs to be removed from.
+ - role: The role user needs to be removed from. Possible values: administrator
 ```
 {
     "email": "first.last@domain.com",
@@ -733,8 +767,9 @@ Example response where the Account create request has been successful.
 GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
 
 ### Request
- - offset: How many records to skip. This is used to page through records.
- - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side.
+Optional
+ - offset: How many records to skip. This is used to page through records. Default = 0
+ - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side. Default = 1
 
 ### Response
 - accounts: A collection of AccountSummary objects
@@ -773,6 +808,7 @@ GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
 GET to https://api.typsy.com/v2/accounts/{identifier}
 
 ### Request
+Required
  - identifier: The identifier provided in the create account step
 
 ### Response
