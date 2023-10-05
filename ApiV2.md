@@ -119,9 +119,10 @@ Required
 - lastName: The last name of the user
 - email: The email of the user
 - structures: The collection of structures (venues/departments/groups) you wish to add the user to
+
 Optional
 - teams: The collection of teams you wish to add the user to, 
-- claims: Used for adding the claims for the user - optional,
+- claims: Used for adding the claims for the user,
 - ssoUserIdentifier: Used for adding the user identifier for SSO login - required for SSO connected accounts only
 - options:
     - sendInvitation - sends an invitation to the user to claim their account. Default = false
@@ -205,6 +206,7 @@ POST to https://api.typsy.com/v2/users/workspace/depart
 ### Request
 Required
 - email: The email of the user
+
 Optional
 - options:
     - sendFarewellEmail: sends a farewell email after a period of time to the user after they have been departed, letting them know what has happened to their account and learning history. Default = false
@@ -240,6 +242,7 @@ POST to https://api.typsy.com/v2/users/workspace/teams/add
 Required
 - email: The email of the user
 - teams: The collection of teams you wish to add the user to
+
 Optional
 - options:
     - createTeamsIfNotExist - creates the team within the account if it does not already exist. Default = true
@@ -279,6 +282,7 @@ POST to https://api.typsy.com/v2/users/workspace/teams/remove
 Required
 - email: The email of the user
 - teams: The collection of teams you wish to remove the user from
+
 Optional
 - options:
     - continueIfNotInTeam: If the user is not in a team which they were requested to be removed from, the process will continue. If set to false, it will return an error telling you they are not in the team. Default = true
@@ -318,6 +322,7 @@ POST to https://api.typsy.com/v2/users/workspace/structures/add
 Required
 - email: The email of the user
 - structures: The collection of structures (venues/departments/groups) you wish to add the user to
+
 Optional
 - options:
     - createStructuresIfNotExist: creates the structure within the account if it does not already exist. Default = true
@@ -358,6 +363,7 @@ POST to https://api.typsy.com/v2/users/workspace/structures/remove
 Required
 - email: The email of the user
 - structures: The collection of structures (venues/departments/groups) you wish to remove the user from
+
 Optional
 - options:
     - continueIfNotInStructure: If the user is not in a structure which they were requested to be removed from, the process will continue. If set to false, it will return an error telling you they are not in the structure. Default = true
@@ -611,6 +617,7 @@ Required
  - tzIdentifier: The timezone which the property operates in (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
  - country: 2 letter country code the property resides in (https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
  - identifier: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
+ 
  Optional
  - structures: Used for creating structures (venues/departments/groups) within your account to sort your Users into 
  - teams: Used for creating teams within your account to sort your Users into
