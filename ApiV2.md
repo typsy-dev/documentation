@@ -498,6 +498,7 @@ GET to https://api.typsy.com/v2/users?offset=0&limit=25
 	    "ssoUserIdentifier": "123456",
 	    "workspace": {
 		"identifier": "11844d3c366948f1b14ce3654a7795b2",
+		"status": "Licensed",
 	        "structureCount": 2,
 		"teamCount": 2,
 		"claimsCount": 1
@@ -534,6 +535,7 @@ Returns an UserDetailed object.
     "ssoUserIdentifier": "123456",
     "workspace": {
 	"identifier": "11844d3c366948f1b14ce3654a7795b2",
+	"status": "Licensed",
 	"structures": [
 	    {
 	        "name": "Venue A",
