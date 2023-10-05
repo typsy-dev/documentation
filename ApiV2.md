@@ -265,7 +265,7 @@ POST to https://api.typsy.com/v2/users/workspace/teams/remove
 
 ### Request
 - email: The email of the user
-- teams: Used for adding the user into teams within your account - optional, 
+- teams: Used for selecting which team to remove the user from, 
 - options: Used to enable certain options to perform
 
 Example request to remove teams from a user by email. 
@@ -351,7 +351,7 @@ Example request to remove structures from a user by email.
         }
     ],
     "options": {
-        "continueIfNotInStruture": true,
+        "continueIfNotInStructure": true,
     }
 }
 ```
