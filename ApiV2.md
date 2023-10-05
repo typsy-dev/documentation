@@ -738,6 +738,7 @@ GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
 
 ### Response
 - accounts: A collection of AccountSummary objects
+- corporationId: The identifier which is shared between all of your master and child accounts 
 - metadata:
     - total - total amount of accounts within your master account
     - count - how many accounts were returned
@@ -756,8 +757,10 @@ GET to https://api.typsy.com/v2/accounts?offset=0&limit=25
           "teamCount": 2
         }
     ],
+    "corporationId": "test_corporation",
     "metadata": {
         "total": 13,
+        "count": 1,
         "limit": 1,
         "offset": 0
     }
