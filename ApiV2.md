@@ -228,7 +228,7 @@ Example request to depart a user by email.
 ```
 
 ### Response
-Example response where depart a user request has been successful.
+Example response where depart a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "f1c8c78c-78f0-4b50-af09-df0a14dc3759",
@@ -269,7 +269,7 @@ Example request to add teams to a user by email.
 ```
 
 ### Response
-Example response where add teams to a user request has been successful.
+Example response where add teams to a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "1135fd80-ac65-41b9-8db5-f7c2f379e9ab",
@@ -309,7 +309,7 @@ Example request to remove teams from a user by email.
 ```
 
 ### Response
-Example response where remove teams from a user request has been successful.
+Example response where remove teams from a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "cf74d64e-bf7b-4b35-bee9-427c16ca051b",
@@ -350,7 +350,7 @@ Example request to add structures to a user by email.
 ```
 
 ### Response
-Example response where add structures to a user request has been successful.
+Example response where add structures to a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "8bd1e102-95d1-4965-a9c3-a73a5fc88101",
@@ -390,7 +390,7 @@ Example request to remove structures from a user by email.
 ```
 
 ### Response
-Example response where remove structures from a user request has been successful.
+Example response where remove structures from a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "3b332916-62d8-4a95-a6c7-f83217f3e2ed",
@@ -428,7 +428,7 @@ Example request to add claims to a user by email.
 ```
 
 ### Response
-Example response where add claims to a user request has been successful.
+Example response where add claims to a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "e20f2b42-cfdc-434f-a616-710088da4e00",
@@ -465,7 +465,7 @@ Example request to remove claims from a user by email.
 ```
 
 ### Response
-Example response where remove claims from a user request has been successful.
+Example response where remove claims from a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "580db06c-93ea-4c67-9d05-750530180c6c",
@@ -485,7 +485,7 @@ GET to https://api.typsy.com/v2/users/request-status/{requestId}
 If the initial request has not yet been processed you will receive a [204 No Content](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204) result.  Wait a minute and make another request.
 
 #### Request processed successfully
-Example response where the user create request has been successful.
+Example response where the user create request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "a2e553c0-c963-4bdd-87de-1805122740e6",
@@ -657,7 +657,7 @@ Required
 
 ### Response
 
-Example response where the Account create request has been successful.
+Example response where the Account create request has been successful. The documentation on what do with the requestId is [here](#request-status-1)
 
 ```
 {
@@ -678,7 +678,7 @@ GET to https://api.typsy.com/v2/accounts/request-status/{requestId}
 If the initial request has not yet been processed you will receive a [204 No Content](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204) result.  Wait a minute and make another request.
 
 #### Request processed successfully
-Example response where the account create request has been successful.
+Example response where the account create request has been successful. The documentation on what do with the requestId is [here](#request-status-1)
 
 ```
 {
@@ -729,7 +729,7 @@ Required
 ```
 ### Response
 
-Example response where the Account create request has been successful.
+Example response where the Account create request has been successful. The documentation on what do with the requestId is [here](#request-status-1)
 
 ```
 {
@@ -762,7 +762,7 @@ Required
 ```
 ### Response
 
-Example response where the Account create request has been successful.
+Example response where the Account create request has been successful. The documentation on what do with the requestId is [here](#request-status-1)
 
 ```
 {
