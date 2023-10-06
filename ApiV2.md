@@ -485,7 +485,7 @@ GET to https://api.typsy.com/v2/users/request-status/{requestId}
 If the initial request has not yet been processed you will receive a [204 No Content](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204) result.  Wait a minute and make another request.
 
 #### Request processed successfully
-Example response where the user create request has been successful. The documentation on what do with the requestId is [here](#request-status)
+Example response where the user create request has been successful.
 ```
 {
     "requestId": "a2e553c0-c963-4bdd-87de-1805122740e6",
