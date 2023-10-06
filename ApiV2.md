@@ -119,16 +119,22 @@ Required
 - lastName: The last name of the user
 - email: The email of the user
 - structures: The collection of structures (venues/departments/groups) you wish to add the user to
+    - name: the name of the structure
+    - role: the role for the member within the structure. Possible values: member, manager
 
 Optional
-- teams: The collection of teams you wish to add the user to, 
-- claims: Used for adding the claims for the user,
-- ssoUserIdentifier: Used for adding the user identifier for SSO login - required for SSO connected accounts only
+- teams: The collection of teams you wish to add the user to
+    - name: the name of the team
+- claims: A collection of claims you wish to add the user to
+    - key: the name of your external id
+    - value: the value of your external id
+    - issuer: who issued the claim (often just your overall account name)
+- ssoUserIdentifier: Used for adding the user identifier for SSO login. Required for SSO connected accounts only
 - options:
-    - sendInvitation - sends an invitation to the user to claim their account. Default = false
-    -createStructuresIfNotExist - creates the structure within the account if it does not already exist. Default = true
-    - createTeamsIfNotExist - creates the team within the account if it does not already exist. Default = true
-    - reactivateIfDeparted - if the user was previously departed from this account it reactivates them within the account if set to true. If set to false, it will give you an error saying that the user was departed from this account. Default = false
+    - sendInvitation: sends an invitation to the user to claim their account. If your account is set up with SSO this must be set to false or the API will return an error. Default = false
+    - createStructuresIfNotExist: creates the structure within the account if it does not already exist. Default = true
+    - createTeamsIfNotExist: creates the team within the account if it does not already exist. Default = true
+    - reactivateIfDeparted: if the user was previously departed from this account it reactivates them within the account if set to true. If set to false, it will give you an error saying that the user was departed from this account. Default = false
 
 Example request to create a user (minimum information).  
 ```
@@ -188,7 +194,7 @@ Example request to create a user (additional information).
 ```  
 
 ### Response
-Example response where create a user request has been successful.
+Example response where create a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
 ```
 {
     "requestId": "a2e553c0-c963-4bdd-87de-1805122740e6",
@@ -245,7 +251,7 @@ Required
 
 Optional
 - options:
-    - createTeamsIfNotExist - creates the team within the account if it does not already exist. Default = true
+    - createTeamsIfNotExist: creates the team within the account if it does not already exist. Default = true
 
 Example request to add teams to a user by email. 
 ```
@@ -617,7 +623,7 @@ Required
  - tzIdentifier: The timezone which the property operates in (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
  - country: 2 letter country code the property resides in (https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
  - identifier: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
- 
+
  Optional
  - structures: Used for creating structures (venues/departments/groups) within your account to sort your Users into 
  - teams: Used for creating teams within your account to sort your Users into
