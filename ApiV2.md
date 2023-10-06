@@ -450,7 +450,7 @@ POST to https://api.typsy.com/v2/users/workspace/claims/remove
 ### Request
 Required
 - email: The email of the user
-- claims: A collection of claims you wish to add the user to
+- claims: A collection of claims you wish to remove the user from
     - key: the name of your external id
     - issuer: who issued the claim (often just your overall account name)
 
