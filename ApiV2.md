@@ -568,6 +568,20 @@ Required:
  - email: The email provided in the create user step (or)
  - ssoUserIdentifier : The user identifier used for SSO login
 
+ Example request to get userby email. 
+```
+{
+    "email": "first.last@domain.com"
+}
+```
+
+ Example request to get userby ssoUserIdentifier. 
+```
+{
+    "ssoUserIdentifier": "123456"
+}
+```
+
 ### Response
 Returns an UserDetailed object.
 
