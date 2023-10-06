@@ -9,23 +9,23 @@ Authenticate
 1. Test Authentication with the API
 
 User API
-1. [Create a user (assign a license to a new user)] (#user-create)
-2. [Depart a user (removes the assigned license and prevents login)] (#user-depart)
-3. [Add a user to a Structure] (#user-add-structures)
-4. [Remove a user from a Structure] (#user-remove-structures)
-5. [Add a user to a Team] (#user-add-teams)
-6. [Remove a user from a team] (#user-remove-teams)
-7. [Add Claims to a user] (#user-add-claims)
-8. [Remove Claims from a user] (#user-remove-claims)
-9. [Get Users list] (#list-users)
-10. [Get a User] (#get-user)
+1. [Create a user (assign a license to a new user)](#user-create)
+2. [Depart a user (removes the assigned license and prevents login)](#user-depart)
+3. [Add a user to a Structure](#user-add-structures)
+4. [Remove a user from a Structure](#user-remove-structures)
+5. [Add a user to a Team](#user-add-teams)
+6. [Remove a user from a team](#user-remove-teams)
+7. [Add Claims to a user](#user-add-claims)
+8. [Remove Claims from a user](#user-remove-claims)
+9. [Get Users list](#list-users)
+10. [Get a User](#get-user)
 
 Account API
-1. [Create a new child account] (#account-create)
-2. [Add a Role to a User in a child account] (#account-role-add)
-3. [Remove a Role from a User in a child account] (#account-role-remove)
-4. [Get Accounts list] (#list-accounts)
-5. [Get a Account] (#get-account)
+1. [Create a new child account](#account-create)
+2. [Add a Role to a User in a child account](#account-role-add)
+3. [Remove a Role from a User in a child account](#account-role-remove)
+4. [Get Accounts list](#list-accounts)
+5. [Get a Account](#get-account)
 
 ## Authentication
 Typsy will provide you with the following items:
