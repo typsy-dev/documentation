@@ -5,8 +5,9 @@ Typsy provides an API for basic operations on Users and Accounts.
 
 ## Actions
 The supported actions are:
+
 Authenticate
-1. Test Authentication with the API
+1. [Test Authentication with the API](#authentication)
 
 User API
 1. [Create a user (assign a license to a new user)](#user-create)
