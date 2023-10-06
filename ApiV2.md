@@ -122,6 +122,9 @@ Required
     - name: the name of the structure
     - role: the role for the member within the structure. Possible values: member, manager
 
+Required for SSO connected accounts
+- ssoUserIdentifier: Used for adding the user identifier for SSO login.
+
 Optional
 - teams: The collection of teams you wish to add the user to
     - name: the name of the team
@@ -129,7 +132,7 @@ Optional
     - key: the name of your external id
     - value: the value of your external id
     - issuer: who issued the claim (often just your overall account name)
-- ssoUserIdentifier: Used for adding the user identifier for SSO login. Required for SSO connected accounts only
+
 - options:
     - sendInvitation: sends an invitation to the user to claim their account. If your account is set up with SSO this must be set to false or the API will return an error. Default = false
     - createStructuresIfNotExist: creates the structure within the account if it does not already exist. Default = true
