@@ -1,6 +1,6 @@
 <base target="_blank">
 
-# API
+# API V2
 Typsy provides an API for basic operations on Users and Accounts.
 
 ## Actions
