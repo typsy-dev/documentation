@@ -105,9 +105,9 @@ If authentication has been successful you will be returned a 200 status code.  I
 # Users
 
 If you're a master account you will need to add this header to your requests
-- Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs to.
+- Typsy-Account-Code : The internal code your company uses to identify its properties, needed to identify which child account the user belongs to.
 
-If there is an issue with locating the child account matching the identifier you provided, you will receive a 400 Bad Request response.
+If there is an issue with locating the child account matching the code you provided, you will receive a 400 Bad Request response.
 
 ## User create
 
@@ -640,7 +640,7 @@ Required
  - vanityName: The name of the property that the Users will see
  - tzIdentifier: The timezone which the property operates in (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
  - country: 2 letter country code the property resides in (https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
- - identifier: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
+ - Code: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
 
  Optional
  - structures: Used for creating structures (venues/departments/groups) within your account to sort your Users into 
@@ -652,7 +652,7 @@ Required
   "vanityName": "My Account",
   "tzIdentifier": "Australia/Melbourne",
   "country": "AU",
-  "identifier": "MEL_HOTEL1",
+  "Code": "MEL_HOTEL1",
   "structures": [
     {
       "name": "Hotel Restaurant"
@@ -719,7 +719,7 @@ Example response where the account create request has failed.
     "errors": [
         {
             "code": "account_already_exists",
-            "description": "An account with the corporationId CORPORATION_ID and identifier MY_IDENTIFIER already exists"
+            "description": "An account with the corporationId CORPORATION_ID and code MY_CODE already exists"
         }
     ],
     "success": false
@@ -730,7 +730,7 @@ Example response where the account create request has failed.
 Used to add role to a user with in a child account
 
 If you're a master account you will need to add this header to your requests
-- Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+- Typsy-Account-Code : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
 
 ### Endpoint
 POST to https://api.typsy.com/v2/accounts/roles/add
@@ -763,7 +763,7 @@ Example response where the Account create request has been successful. The docum
 Used to remove role from a user with in a child account
 
 If you're a master account you will need to add this header to your requests
-- Typsy-Account-Identifier : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
+- Typsy-Account-Code : The internal code your company uses to identify its properties, needed to identify which child account the user belongs.
 
 ### Endpoint
 POST to https://api.typsy.com/v2/accounts/roles/remove
@@ -814,7 +814,8 @@ Optional
 {
     "accounts": [
         {
-          "identifier": "MEL_HOTEL1",
+          "identifier": "1f2d3f0aa6b94cb5a9ce2934fefa0cc3",
+          "code": "MEL_HOTEL1",
           "name": "My Account Pty Ltd",
           "vanityName": "My Account",
           "tzIdentifier": "Australia/Melbourne",
@@ -836,35 +837,40 @@ Optional
 ## Get Account
 
 ### Endpoint
-GET to https://api.typsy.com/v2/accounts/{identifier}
+GET to https://api.typsy.com/v2/accounts/{code}
 
 ### Request
 Required
- - identifier: The identifier provided in the create account step
+ - code: The code provided in the create account step
 
 ### Response
 Returns an AccountSummaryDetailed object.
 
 ```
 {
-  "identifier": "MEL_HOTEL1",
+  "identifier": "1f2d3f0aa6b94cb5a9ce2934fefa0cc3",
+  "code": "MEL_HOTEL1",
   "name": "My Account Pty Ltd",
   "vanityName": "My Account",
   "tzIdentifier": "Australia/Melbourne",
   "country": "AU",
   "structures": [
     {
+      "identifier": "4f3ee0a5a6d649a1be0e5bb523c21451",
       "name": "Hotel Restaurant"
     },
     {
+      "identifier": "42ecb8e2fec7402ea4941db661313950",
       "name": "Hotel Bar"
     }
   ],
   "teams": [
     {
+      "identifier": "ea73a0ace3bd479697704cbbd61a9a97",
       "name": "Dishwashers"
     },
     {
+      "identifier": "631fec56ce1e425ca80045a60911cf12",
       "name": "Bartenders"
     }
   ]
@@ -873,4 +879,4 @@ Returns an AccountSummaryDetailed object.
 
 #### No account found
 
-A 204 No Content response will be returned if no account matching the identifier can be found within the requesting master account.
+A 204 No Content response will be returned if no account matching the code can be found within the requesting master account.
