@@ -30,65 +30,67 @@ Account API
 
 ## Authentication
 Typsy will provide you with the following items:
-1. Public API Key: A unique key used to generate the hash. 
-2. Private API Key: A unique key used as part of the hash.
+1. Client Id: A unique key which is related to your account within Typsy
+2. Client Secret: A secret key (similar to a password) which is needed to authenticate. Note that this value is one way hashed when stored in our database. Once we provide it to you, we will no longer be able to retrieve the value, but a new client secret can be generated.
 
-### Generating the HMAC SHA256 Hash
-The following values are required to produce the hash which is included with each request.
+### Authenticating with OAuth2 and generating the bearer token
 
-1. UTC Timestamp
-2. Public API Key
-3. Private API Key
+#### Endpoint
+POST to https://api.typsy.com/connect/token
 
-#### UTC Timestamp
-The timestamp must be in the following format: yyyy-MM-ddTHH:mm:SS.fffffffZ and must be the current time.
+#### Request
+The following headers need to be provided to generate a bearer token
+- grant_type : client_credentials
+- client_id : The client id provided to you by Typsy
+- client_secret : The client secret provided to you by Typsy
 
-In C# this is generated using the following line of code:
+#### Response
+- access_token : The bearer token which you will use to authenticate requests to the API
+- token_type : The token type you have been granted (will always be bearer)
+- expires_in : The time to live (TTL) of the token
+- scope : Additional scopes granted to your token (will always be offline_access)
+- refresh_token : An additional token which can be used to generate further bearer tokens with the same claims and scope
 
-    DateTime.UtcNow.ToString("O");
+Example response of a successful request
+```
+{
+    "access_token": "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiJCNUE2NzhCNTRFMEIxRUJEMTI4MzMwOEYwRjRCMEY4Q0JCMzFGMjQ4IiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.BbU-954CEdwi01dY2IPO1jVkc2WSOlueIYa_VTQkZuXwcvLbZ-KCQxuuciJV2vG3tJj97sRB_n40TUogJY-32KcQrlU_JUcQU6m6UvpQkCad19lLg_0kefakH9NrnGcBi1s7T9Stl4Z3hbu_JYj26h2ELliIR2t4LWXC0D6SY_RgZwbDCnSi4qN1ByaoVGHa-8O6EZMdc1Dpopr3UI2wVFlA4BZOmbsIgQ1xcmjENrKAIHQe-45DeQkz8HdZTNnxdWh_FyYNCi_OAMYqJvoSOhqJSH5_FPL0x2yFyBNnAGwlkAI4yrvnr6oGPJa5QoUGA0UwZCd8uMgotpktvMrPeA.D3Ehq0i6MiNl7TNZtSPoaA.1Xzw7kjkkExw2qro31BMK3o_nSk5V1sz73Qlcs8SksbLucQBKkArBiPTgHky4MHvFv7n81YaXRMb7cPrp5reZYcQLO2CFvj8Qz76m4fn4GxbgFp7cFNtxlnEqcEr6H_ZHL1zWp2mK1b6rPfGIJvAv5UX7PbGYSquQ1za_xmudFb5Eck1oBBBwb9GGyTG8OMc0C5_UnVXdq4TdNBG-obUXckTCSjQCxwkSVjNAVSUnmsjk4eRWNfnCtW1LdzU8m7NHilM3EXLMyo1VLMx3vursZ08oP_tbqDUVjqx3_zu7IKYuA74HBQTP3tg-bC7mYdlaLx2vPA5l-aqunZHxtjBrA30lT3EgoTvsPn9sTzSjlTXAo8CX0EpfjKBKs93RJt9O0iTC-Vy0oRqOkBeH9JWWlGdS37W5NcNHV8mQdsFPekfzOqYNi53sdHb040JsiENCQ_YSz6a5vMg8iSeZvcbuBpn_npwmNFQjpponn4PtShGrdq0fMRxLH_p-MaUICS4Y-DfGJaUTBaNCaucuWV1WejH3zq3zrPoqaqMIPBUUPICThK2lKajLbyUoviq-T-njwYbFtU40c1TFwY3mD2xDdwNMgY400mbV73PkHHiafyE84jxrwWZH_tWXhgzuuVFTn1Md2Hz9OlxN2GCqqNj2LnuR4sk-xa9u3gR0Ce14CFG5LFAr75fEhRw0HaJJI3y-F9nG6n5DUB3JvcFM2X-Jcyi5O30nQ1rmUE-eYV0QamxBM3b-qtBADQpR6G_nHNzvP3DmCS3aD-9xJXceM7b230RZdNf6dCVK6gXgRMEp-V1RCvBeuxBocFCVIZm0q-Y1f1ozBGxGbioM5pUEdKFLgW-PgAWpdeM62odiBv4WvMoIsAKPcmla-dJ3Ckq3NyV1jN7bFyfAtlch2lIcssB8SoBbPlYTXAtdRXf2dM6F23hCV4rrC-OA6D8gIpS6xnG5FmbVXvURjjifCllv__T-B5kqw2VgPTe5fnQzsvbBV3ro3CEhqR05f4irAA25sEgciHcTd6sgH6uw42DSvfIGzsoBNilI9LAnrkhf5NTXg5tVndNY6W-2xSlqRsd9_LEqTY4OgBrGZRsnJRet9MbJHkXHbWu4h3lYu-w0zQj1lhAXvfOyVKUCG5lEEs1i7Sx70pY64sGq9ODe7y6c0paur6HzpKoiLt3V43GD-Tf1l-4AkdiNclJkZB2zj_RjJwPFRdM73qnHxRBDPuCfBjjzqweex19JXqf6gSmgivEWK4PU6WfANdgb0EpBRaE2JYqOt04YcYVkb21HAqFuQD4WAAl73_L2lKmDRcGr2_L8TdpLuSaxDG3MuZ-OVNavvj2.CvM9seoW1LF0-RQ0oMrC01KaIVhQTuehtRGV918UcGA",
+    "token_type": "Bearer",
+    "expires_in": 3599,
+    "scope": "offline_access",
+    "refresh_token": "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiJCNUE2NzhCNTRFMEIxRUJEMTI4MzMwOEYwRjRCMEY4Q0JCMzFGMjQ4IiwidHlwIjoib2lfcmVmdCtqd3QiLCJjdHkiOiJKV1QifQ.EgV-ZJMIj1bQIowzoKVIQrKCRpNb_JjftEaddqQPZ4aFbY3wF1p0Tj0yTsapbo7T2W0oVKTerknNpHLTIaAmb1dwH-_ovk_BxIdtH6ZXD4GVshSOpXzTQRCsWuX7bRDYV5Ta-mcX716ReACjV_FfGeCnntU3k9zs3pUR4ZykACrHdJRRv8WG93BzUIwFjVSftl0SFMNMb9CSDg-m7mOab_Z3afYyzrufr0k6GVsgp-kf2mxSZRVclByN3ILVEaoMySypmMMJexzDy381iKLgrx-vyebusKLGoanzT92RM7w-lEyXMlXtVVlA0EuoHAuKe0ltdB5wH9OIOQuH_jwDCg.t7pA-4B9rMeeT3J7SLRaqw.PdWFznPn_IrcTE4lIJ7IzySCg4LValKwVMC_0Lwq4IpK6FE7nRxocGZgJ_ZqBNaqTyxW34iVndbtNXjeVJK7-K4R6i40AyNRbsz75a5x6J2ChGC4RTtfAQ6ZTkUix9sGzwBfeY_BOzs0kkTRly09n8Ua6SkZSlvHBxmU0A7jUB-EpICUu_-09uG7yRtDnGKdHkp6J1amh84kYkHYDlKbfUjvP9jlQWx0wCJCLoXtMOpuhN7q5w2MF0fGGwJgOsJ7FljC6qegF-0lM8KVV7XjdQgH35wiOd7_8aPz-ijWinI1EPyq8o5n_Z3cQb0HhQzrCvIIX2p8lDdMiQzzCo7XuQntIU228pwlvUxhGmPOh1vXM0x5exAey6FOqdDq6z7Xb4yo0H1mm3R8f9iWqIk8XGwYaGcUUD1I9h7Lqfty2E5EtdIrATm7KOfOjoQa3cswa7Ih1R-YTDdTGQ95inTgObMEq8AI9_3koLPffl-9XpD-uatAYNrW-lpCpMQJCY00-nzuTrVQ7xHSijHtQxPdenJNBRPfksBNPUaSujVMQGP3kEFrVZ0XCmBk0ah-EunSPa3fDimPJqdUCLff_2RK_ZJ15VBj5z7VsdnWotR02Tmbd0F6BIe0kZfOlBllkPVYKjTn4hJv9lPOh2aWINYJOcRqmy3E8TwEeABeYKkFnwmRa27rJABDj7nUKYWdCdmnJAhxo2snIUaN6TbvPuA-5ku5UQ7IJYta9YCMAQs2NN070xwBhsq8jdois8a_PdlhNHZGSGg2qfdVDGvCpphqdoqOPxGF7MOXssjY7kWzeaq-T8SwEo3NFg3UasmdZhpj4NQnCIxUwRdOHD8DyBBex2jC4GnTVjXGt9UnICC-3mlUd3Bt5vSEPGWJ_Ez60vW8yhkpST7oA_IvjB6nNzOKvlF7Aad6M3oW3lJc1wL7p1qI7nf2PedM0jnTUjPDigbFq1qdsX_WJ_OTB34382R6kpw6d89yQNgDzfJhjmouC_g4NWDorjourzZhLWw0MhBdS4KganwaJzckGUgnX9zAonbtpYV1Yb6dWlTbxBbn_Qta_q3mVkma8nsHHYZBBS3ekxuWcH3JJO33_NzUt_HsN-GX_2bvqHwEN7pK4qvZi2DcKWyfrrFXDzWrv9qr37plhwzDGBXTuPLe6ORE9Ibro6t6z2Nfl9r-nvhLxBxTsK_08g4all57maGMAkfb4XvEPTizKVFockKTLub0HWJGEcbMjHNYSyuFPvAiUmEXrwo.Rue3ruRy_9eQd-_zBH90v-__feebIi8apYbaEMDOQVs"
+}
+```
 
-Failure to provide a current UTC timestamp will result in a 401 status code and the following error message:
+### Using the refresh token
 
-	"Timestamp '2018-11-14T11:19:03.7269943Z' outside of acceptable range. Ensure that the timestamp you provide is current UTC time - e.g. now is '2023-08-09T23:18:21.4801739Z'."
+#### Endpoint
+POST to https://api.typsy.com/connect/token
 
-#### Typsy Key
-The value for the Typsy-Key header value is a Hash of your Typsy Keys and UTC timestamp.  
+#### Request
+The following headers need to be provided to generate a bearer token
+- grant_type : refresh_token
+- client_id : The client id provided to you by Typsy
+- client_secret : The client secret provided to you by Typsy
+- refresh_token : The token given to you after generating your original bearer token
 
-The value is created by concatenating your **Private API Key** with the **UTC timestamp**. The hash must be generated for each request as it contains a timestamp.
+#### Response
+- access_token : The bearer token which you will use to authenticate requests to the API
+- token_type : The token type you have been granted (will always be bearer)
+- expires_in : The time to live (TTL) of the token
+- scope : Additional scopes granted to your token (will always be offline_access)
+- refresh_token : An additional token which can be used to generate further bearer tokens without using the client id and client secret
 
-If your Private API Key is **0a00a000aa0a0a0a0000a0000a00a000** and the UTC timestamp is **2023-09-18T11:19:03.7269943Z** then you concatenate as follows:
-
-	{PRIVATE KEY}:{TIMESTAMP}
-
-	0a00a000aa0a0a0a0000a0000a00a000:2023-09-18T11:19:03.7269943Z
-
-This value is then hashed with your Public API Key to generate your HMAC-SHA-256-SECRET. The Public API Key in this example is **aaa00000-0a0a-0000-a0aa-000a0000a00a**
-
-The secret generated by the above example is: 
-	
-	3ca489e0a7e395de121658ba760280e7aabaa33dd15612f83b0eba7f6060b988
-
-This can be demonstrated/tested using the following tool: http://beautifytools.com/hmac-generator.php
-1. Where it says 'Enter message here' place: 0a00a000aa0a0a0a0000a0000a00a000:2023-09-18T11:19:03.7269943Z
-2. Where it says 'Secret key' place: aaa00000-0a0a-0000-a0aa-000a0000a00a
-3. Select alogorithim: sha256
-
-![image](https://github.com/typsy-dev/documentation/blob/master/assets/hmac_generation.png)
-
-___
-
-##### Generating the encrypted key
-Here is a [code sample](https://github.com/typsy-dev/web-player/blob/master/asp-net-core/asp-net-core/Utilities/EncryptionHelper.cs) in C# that demonstrates how to create the encrypted key.
-
-___
-
-These values must be added to the header of each request, see the following example from Postman.
-
-1. Typsy-Timestamp: <INSERT UTC TIMESTAMP>
-2. Typsy-Public-Key: <INSERT PUBLIC API KEY>
-3. Typsy-Key: <INSERT HMACSHA256 HASH OF PRIVATE KEY AND TIMESTAMP>
-
-![image](https://github.com/typsy-dev/documentation/blob/master/assets/postman_headers.png)
+Example response of a successful request
+```
+{
+    "access_token": "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiJCNUE2NzhCNTRFMEIxRUJEMTI4MzMwOEYwRjRCMEY4Q0JCMzFGMjQ4IiwidHlwIjoiYXQrand0IiwiY3R5IjoiSldUIn0.BbU-954CEdwi01dY2IPO1jVkc2WSOlueIYa_VTQkZuXwcvLbZ-KCQxuuciJV2vG3tJj97sRB_n40TUogJY-32KcQrlU_JUcQU6m6UvpQkCad19lLg_0kefakH9NrnGcBi1s7T9Stl4Z3hbu_JYj26h2ELliIR2t4LWXC0D6SY_RgZwbDCnSi4qN1ByaoVGHa-8O6EZMdc1Dpopr3UI2wVFlA4BZOmbsIgQ1xcmjENrKAIHQe-45DeQkz8HdZTNnxdWh_FyYNCi_OAMYqJvoSOhqJSH5_FPL0x2yFyBNnAGwlkAI4yrvnr6oGPJa5QoUGA0UwZCd8uMgotpktvMrPeA.D3Ehq0i6MiNl7TNZtSPoaA.1Xzw7kjkkExw2qro31BMK3o_nSk5V1sz73Qlcs8SksbLucQBKkArBiPTgHky4MHvFv7n81YaXRMb7cPrp5reZYcQLO2CFvj8Qz76m4fn4GxbgFp7cFNtxlnEqcEr6H_ZHL1zWp2mK1b6rPfGIJvAv5UX7PbGYSquQ1za_xmudFb5Eck1oBBBwb9GGyTG8OMc0C5_UnVXdq4TdNBG-obUXckTCSjQCxwkSVjNAVSUnmsjk4eRWNfnCtW1LdzU8m7NHilM3EXLMyo1VLMx3vursZ08oP_tbqDUVjqx3_zu7IKYuA74HBQTP3tg-bC7mYdlaLx2vPA5l-aqunZHxtjBrA30lT3EgoTvsPn9sTzSjlTXAo8CX0EpfjKBKs93RJt9O0iTC-Vy0oRqOkBeH9JWWlGdS37W5NcNHV8mQdsFPekfzOqYNi53sdHb040JsiENCQ_YSz6a5vMg8iSeZvcbuBpn_npwmNFQjpponn4PtShGrdq0fMRxLH_p-MaUICS4Y-DfGJaUTBaNCaucuWV1WejH3zq3zrPoqaqMIPBUUPICThK2lKajLbyUoviq-T-njwYbFtU40c1TFwY3mD2xDdwNMgY400mbV73PkHHiafyE84jxrwWZH_tWXhgzuuVFTn1Md2Hz9OlxN2GCqqNj2LnuR4sk-xa9u3gR0Ce14CFG5LFAr75fEhRw0HaJJI3y-F9nG6n5DUB3JvcFM2X-Jcyi5O30nQ1rmUE-eYV0QamxBM3b-qtBADQpR6G_nHNzvP3DmCS3aD-9xJXceM7b230RZdNf6dCVK6gXgRMEp-V1RCvBeuxBocFCVIZm0q-Y1f1ozBGxGbioM5pUEdKFLgW-PgAWpdeM62odiBv4WvMoIsAKPcmla-dJ3Ckq3NyV1jN7bFyfAtlch2lIcssB8SoBbPlYTXAtdRXf2dM6F23hCV4rrC-OA6D8gIpS6xnG5FmbVXvURjjifCllv__T-B5kqw2VgPTe5fnQzsvbBV3ro3CEhqR05f4irAA25sEgciHcTd6sgH6uw42DSvfIGzsoBNilI9LAnrkhf5NTXg5tVndNY6W-2xSlqRsd9_LEqTY4OgBrGZRsnJRet9MbJHkXHbWu4h3lYu-w0zQj1lhAXvfOyVKUCG5lEEs1i7Sx70pY64sGq9ODe7y6c0paur6HzpKoiLt3V43GD-Tf1l-4AkdiNclJkZB2zj_RjJwPFRdM73qnHxRBDPuCfBjjzqweex19JXqf6gSmgivEWK4PU6WfANdgb0EpBRaE2JYqOt04YcYVkb21HAqFuQD4WAAl73_L2lKmDRcGr2_L8TdpLuSaxDG3MuZ-OVNavvj2.CvM9seoW1LF0-RQ0oMrC01KaIVhQTuehtRGV918UcGA",
+    "token_type": "Bearer",
+    "expires_in": 3599,
+    "scope": "offline_access",
+    "refresh_token": "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZDQkMtSFM1MTIiLCJraWQiOiJCNUE2NzhCNTRFMEIxRUJEMTI4MzMwOEYwRjRCMEY4Q0JCMzFGMjQ4IiwidHlwIjoib2lfcmVmdCtqd3QiLCJjdHkiOiJKV1QifQ.EgV-ZJMIj1bQIowzoKVIQrKCRpNb_JjftEaddqQPZ4aFbY3wF1p0Tj0yTsapbo7T2W0oVKTerknNpHLTIaAmb1dwH-_ovk_BxIdtH6ZXD4GVshSOpXzTQRCsWuX7bRDYV5Ta-mcX716ReACjV_FfGeCnntU3k9zs3pUR4ZykACrHdJRRv8WG93BzUIwFjVSftl0SFMNMb9CSDg-m7mOab_Z3afYyzrufr0k6GVsgp-kf2mxSZRVclByN3ILVEaoMySypmMMJexzDy381iKLgrx-vyebusKLGoanzT92RM7w-lEyXMlXtVVlA0EuoHAuKe0ltdB5wH9OIOQuH_jwDCg.t7pA-4B9rMeeT3J7SLRaqw.PdWFznPn_IrcTE4lIJ7IzySCg4LValKwVMC_0Lwq4IpK6FE7nRxocGZgJ_ZqBNaqTyxW34iVndbtNXjeVJK7-K4R6i40AyNRbsz75a5x6J2ChGC4RTtfAQ6ZTkUix9sGzwBfeY_BOzs0kkTRly09n8Ua6SkZSlvHBxmU0A7jUB-EpICUu_-09uG7yRtDnGKdHkp6J1amh84kYkHYDlKbfUjvP9jlQWx0wCJCLoXtMOpuhN7q5w2MF0fGGwJgOsJ7FljC6qegF-0lM8KVV7XjdQgH35wiOd7_8aPz-ijWinI1EPyq8o5n_Z3cQb0HhQzrCvIIX2p8lDdMiQzzCo7XuQntIU228pwlvUxhGmPOh1vXM0x5exAey6FOqdDq6z7Xb4yo0H1mm3R8f9iWqIk8XGwYaGcUUD1I9h7Lqfty2E5EtdIrATm7KOfOjoQa3cswa7Ih1R-YTDdTGQ95inTgObMEq8AI9_3koLPffl-9XpD-uatAYNrW-lpCpMQJCY00-nzuTrVQ7xHSijHtQxPdenJNBRPfksBNPUaSujVMQGP3kEFrVZ0XCmBk0ah-EunSPa3fDimPJqdUCLff_2RK_ZJ15VBj5z7VsdnWotR02Tmbd0F6BIe0kZfOlBllkPVYKjTn4hJv9lPOh2aWINYJOcRqmy3E8TwEeABeYKkFnwmRa27rJABDj7nUKYWdCdmnJAhxo2snIUaN6TbvPuA-5ku5UQ7IJYta9YCMAQs2NN070xwBhsq8jdois8a_PdlhNHZGSGg2qfdVDGvCpphqdoqOPxGF7MOXssjY7kWzeaq-T8SwEo3NFg3UasmdZhpj4NQnCIxUwRdOHD8DyBBex2jC4GnTVjXGt9UnICC-3mlUd3Bt5vSEPGWJ_Ez60vW8yhkpST7oA_IvjB6nNzOKvlF7Aad6M3oW3lJc1wL7p1qI7nf2PedM0jnTUjPDigbFq1qdsX_WJ_OTB34382R6kpw6d89yQNgDzfJhjmouC_g4NWDorjourzZhLWw0MhBdS4KganwaJzckGUgnX9zAonbtpYV1Yb6dWlTbxBbn_Qta_q3mVkma8nsHHYZBBS3ekxuWcH3JJO33_NzUt_HsN-GX_2bvqHwEN7pK4qvZi2DcKWyfrrFXDzWrv9qr37plhwzDGBXTuPLe6ORE9Ibro6t6z2Nfl9r-nvhLxBxTsK_08g4all57maGMAkfb4XvEPTizKVFockKTLub0HWJGEcbMjHNYSyuFPvAiUmEXrwo.Rue3ruRy_9eQd-_zBH90v-__feebIi8apYbaEMDOQVs"
+}
+```
 
 ## Validate Authentication
 A request can be sent to validate that authentication is working correctly.
@@ -97,7 +99,7 @@ A request can be sent to validate that authentication is working correctly.
 GET to https://api.typsy.com/v2/authenticate
 
 ### Request
-Send an empty request but with all the required parameters for authentication.
+Send an empty request with an Authorization header
 
 ### Response
 If authentication has been successful you will be returned a 200 status code.  If you receive a 40x status code then investigate if all the required parameters for authentication have been constructed correctly and provided in the request.
