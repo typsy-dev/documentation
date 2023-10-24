@@ -81,7 +81,7 @@ The following information needs to be provided to generate a bearer token.
 - token_type : The token type you have been granted (will always be bearer)
 - expires_in : The time to live (TTL) of the token
 - scope : Additional scopes granted to your token (will always be offline_access)
-- refresh_token : An additional token which can be used to generate further bearer tokens without using the client id and client secret
+- refresh_token : An additional token which can be used to generate further bearer tokens with the same claims and scope
 
 Example response of a successful request
 ```
@@ -191,7 +191,7 @@ Example request to create a user (additional information).
     "claims": [
         {
             "key": "external_id",
-            "value": "12345678910"
+            "value": "12345678910",
             "issuer": "IssuerName"
         }
     ],
@@ -535,6 +535,19 @@ Optional
 
 ### Response
 - users: A collection of UserSummary objects
+UserSummary
+    - identifer: The typsy identifier for the user object
+    - name: The full name of the user
+    - firstName: The first name of the user
+    - lastName: The last name of the user
+    - email: The email of the user
+    - ssoUserIdentifier: The user identifier used for SSO login
+        Workspace
+        - identifer: The typsy identifier for the workspace object
+        - status: The current status of the user within the account (licensed or departed)
+        - structureCount: Count of structures the workspace is active in
+        - teamCount: Count of teams the workspace is active in
+        - claimsCount: Count of claims the workspace has attached
 - metadata:
     - total - total amount of users within your master account
     - count - how many users were returned
@@ -545,21 +558,22 @@ Optional
     "users": [
 	{
 	    "identifier": "f12d3f0fa6b94c5fa9ce2934fefa0cc3"
-	    "firstName": "FirstName",
+	    "name": "FirstName LastName",
+        "firstName": "FirstName",
 	    "lastName": "LastName",
 	    "email": "first.last@domain.com",
 	    "ssoUserIdentifier": "123456",
 	    "workspace": {
-    		"identifier": "11844d3c366948f1b14ce3654a7795b2",
-    		"status": "Licensed",
+            "identifier": "11844d3c366948f1b14ce3654a7795b2",
+            "status": "Licensed",
             "structureCount": 2,
-    		"teamCount": 2,
-    		"claimsCount": 1
-	    }
-	}
+            "teamCount": 2,
+            "claimsCount": 1
+        }
+    }
     ],
     "metadata": {
-	"total": 3,
+    "total": 3,
         "count": 1,
         "limit": 1,
         "offset": 0
@@ -597,6 +611,7 @@ Returns an UserDetailed object.
 ```
 {
     "identifier": "f12d3f0fa6b94c5fa9ce2934fefa0cc3",
+    "name": "FirstName LastName",
     "firstName": "FirstName",
     "lastName": "LastName",
     "email": "first.last@domain.com",
