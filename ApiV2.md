@@ -40,7 +40,11 @@ POST to https://api.typsy.com/connect/token
 
 #### Request
 The following information needs to be provided to generate a bearer token.
+
+Header
 - Content-Type: application/x-www-form-urlencoded
+
+Form Body
 - grant_type : client_credentials
 - client_id : The client id provided to you by Typsy
 - client_secret : The client secret provided to you by Typsy
@@ -470,7 +474,7 @@ Example request to remove claims from a user by email.
     "claims": [
         {
             "key": "external_id",
-	        "issuer": "IssuerName"
+            "issuer": "IssuerName"
         }
     ]
 }
@@ -556,14 +560,14 @@ UserSummary
 ```
 {
     "users": [
-	{
-	    "identifier": "f12d3f0fa6b94c5fa9ce2934fefa0cc3"
-	    "name": "FirstName LastName",
+    {
+        "identifier": "f12d3f0fa6b94c5fa9ce2934fefa0cc3"
+        "name": "FirstName LastName",
         "firstName": "FirstName",
-	    "lastName": "LastName",
-	    "email": "first.last@domain.com",
-	    "ssoUserIdentifier": "123456",
-	    "workspace": {
+        "lastName": "LastName",
+        "email": "first.last@domain.com",
+        "ssoUserIdentifier": "123456",
+        "workspace": {
             "identifier": "11844d3c366948f1b14ce3654a7795b2",
             "status": "Licensed",
             "structureCount": 2,
@@ -617,29 +621,29 @@ Returns an UserDetailed object.
     "email": "first.last@domain.com",
     "ssoUserIdentifier": "123456",
     "workspace": {
-	"identifier": "11844d3c366948f1b14ce3654a7795b2",
-	"status": "Licensed",
-	"structures": [
-	    {
-	        "name": "Venue A",
-	        "role": "member"
-	    },
-	    {
-	        "name": "Venue B",
-	        "role": "manager"
-	    }
+    "identifier": "11844d3c366948f1b14ce3654a7795b2",
+    "status": "Licensed",
+    "structures": [
+        {
+            "name": "Venue A",
+            "role": "member"
+        },
+        {
+            "name": "Venue B",
+            "role": "manager"
+        }
         ],
         "teams": [
-	    {
-	        "name": "Team A"
-	    }
+        {
+            "name": "Team A"
+        }
         ],
         "claims": [
-	    {
-	        "key": "external_id",
-	        "value": "12345678910"
-	        "issuer": "IssuerName"
-	    }
+        {
+            "key": "external_id",
+            "value": "12345678910"
+            "issuer": "IssuerName"
+        }
         ]
     }
 }
