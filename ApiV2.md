@@ -538,8 +538,9 @@ Optional
  - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side. Default = 1
 
 ### Response
-- users: A collection of UserSummary objects
-UserSummary
+- users: A collection of user summary objects
+
+User Summary
     - identifer: The typsy identifier for the user object
     - name: The full name of the user
     - firstName: The first name of the user
