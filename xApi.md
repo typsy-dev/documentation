@@ -42,7 +42,7 @@ This is a sample message sent at course completion
             "name": "John Shaker",
             "account": {
                 "homePage": "https://www.typsy.com/profile/john-shaker",
-                "name": "123456789"
+                "name": "4db4abe545c74c16bff2c82d45d1a9b8"
             }
         },
         "verb": {
@@ -123,7 +123,7 @@ This is a sample message sent at course progressed
             "name": "John Shaker",
             "account": {
                 "homePage": "https://www.typsy.com/profile/john-shaker",
-                "name": "123456789"
+                "name": "4db4abe545c74c16bff2c82d45d1a9b8"
             }
         },
         "verb": {
