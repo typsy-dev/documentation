@@ -111,7 +111,7 @@ This is a sample message sent at course completion
 This is a sample message sent at course progressed
 
     {
-        "id": "f4178dfb-d61c-4a16-8ab3-5b9fccae7d8c",
+        "id": "90463520-0000-0063-7696-221556238019",
         "stored": "2018-11-01T19:03:01.2719736Z",
         "authority": {
             "objectType": "Agent",
