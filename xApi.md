@@ -53,7 +53,7 @@ This is a sample message sent at course completion
         },
         "object": {
             "objectType": "Activity",
-            "id": "http://xapi.typsy.com/activity/f63362adee5a41368df79982203d628a",
+            "id": "http://xapi.typsy.com/activity/788f7f25ba4e4801a438f2108fe2fa0a",
             "definition": {
                 "type": "http://xapi.typsy.com/types/course",
                 "moreInfo": "https://www.typsy.com/courses/wine-101-for-servers",
@@ -134,7 +134,7 @@ This is a sample message sent at course progressed
         },
         "object": {
             "objectType": "Activity",
-            "id": "http://xapi.typsy.com/activity/f63362adee5a41368df79982203d628a",
+            "id": "http://xapi.typsy.com/activity/788f7f25ba4e4801a438f2108fe2fa0a",
             "definition": {
                 "type": "http://xapi.typsy.com/types/course",
                 "moreInfo": "https://www.typsy.com/courses/wine-101-for-servers",
