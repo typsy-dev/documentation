@@ -69,9 +69,9 @@ This is a sample message sent at course completion
                     "en": "Mastering wine service is one of the most important and valuable skills a server can possess. The ability to perform tableside wine service with confidence is a guaranteed way to display your professionalism and your knowledge of the different aspects of the hospitality industry. It's also an una..."
                 },
                 "extensions": {
-                    "http://xapi.typsy.com/course/self-discovery": false,
-                    "http://xapi.typsy.com/course/iteration": 1,
-                    "http://xapi.typsy.com/course/length": 1704,
+                    "http://xapi.typsy.com/self-discovery": false,
+                    "http://xapi.typsy.com/iteration": 1,
+                    "http://xapi.typsy.com/length": 1704,
                     "http://xapi.typsy.com/issuer/name": "Typsy",
                     "http://xapi.typsy.com/issuer/identifier": "736a1901b3ae4a549878e0b7687ba646",
                     "http://xapi.typsy.com/user/workspace/structures": [{"name":"Area A"},{"name":"Area B"}],
@@ -152,9 +152,9 @@ This is a sample message sent at course progressed
                     "en": "Mastering wine service is one of the most important and valuable skills a server can possess. The ability to perform tableside wine service with confidence is a guaranteed way to display your professionalism and your knowledge of the different aspects of the hospitality industry. It's also an una..."
                 },
                 "extensions": {
-                    "http://xapi.typsy.com/course/self-discovery": false,
-                    "http://xapi.typsy.com/course/iteration": 1,
-                    "http://xapi.typsy.com/course/length": 1704,
+                    "http://xapi.typsy.com/self-discovery": false,
+                    "http://xapi.typsy.com/iteration": 1,
+                    "http://xapi.typsy.com/length": 1704,
                     "http://xapi.typsy.com/issuer/name": "Typsy",
                     "http://xapi.typsy.com/issuer/identifier": "736a1901b3ae4a549878e0b7687ba646",
                     "http://xapi.typsy.com/user/workspace/structures": [{"name":"Area A"},{"name":"Area B"}],
