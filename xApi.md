@@ -46,7 +46,7 @@ This is a sample message sent at course completion
             }
         },
         "verb": {
-            "id": "http://xapi.typsy.com/verbs/completed",
+            "id": "http://adlnet.gov/expapi/verbs/completed",
             "display": {
                 "en": "completed"
             }
@@ -64,13 +64,14 @@ This is a sample message sent at course completion
                     "en": "Mastering wine service is one of the most important and valuable skills a server can possess. The ability to perform tableside wine service with confidence is a guaranteed way to display your professionalism and your knowledge of the different aspects of the hospitality industry. It's also an una..."
                 },
                 "extensions": {
-                    "http://xapi.typsy.com/course/id": 299,
-                    "http://xapi.typsy.com/course/issuer": "Typsy",
                     "http://xapi.typsy.com/course/self-discovery": false,
                     "http://xapi.typsy.com/course/iteration": 1,
-                    "http://xapi.typsy.com/user/workspace-structures": "Hotel A,Hotel B",
-                    "http://xapi.typsy.com/user/workspace-teams": "Bar Staff",
-                    "http://xapi.typsy.com/user/workspace-job-roles": "Barista",
+                    "http://xapi.typsy.com/course/length": 1704,
+                    "http://xapi.typsy.com/issuer/name": "Typsy",
+                    "http://xapi.typsy.com/issuer/identifier": "736a1901b3ae4a549878e0b7687ba646",
+                    "http://xapi.typsy.com/user/workspace/structures": [{"name":"Area A"},{"name":"Area B"}],
+                    "http://xapi.typsy.com/user/workspace/teams": [{"name":"Bar staff"}],
+                    "http://xapi.typsy.com/user/workspace/job-roles": [{"name":"Barista"}],
                     "http://xapi.typsy.com/badge/expires": "2024-02-16T02:05:12.48Z"
                 },
                 "interactionType": "choice"
@@ -97,10 +98,10 @@ This is a sample message sent at course completion
             "platform": "Typsy",
             "language": "en",
             "extensions": {
-                "http://xapi.typsy.com/user/workspace-id": 987654321,
-                "http://xapi.typsy.com/user/workspace-email": "john.shaker@sample.com",
-                "http://xapi.typsy.com/user/workspace-claims": "customer-employee-id:0123456789",
-                "http://xapi.typsy.com/account/id": 82,
+                "http://xapi.typsy.com/user/email": "john.shaker@sample.com",
+                "http://xapi.typsy.com/user/workspace/identifier": "8f98e80195d94516b9007c4d8f785967",
+                "http://xapi.typsy.com/user/workspace/claims": [{"name":"customer-employee-id","value":"0123456789"}],
+                "http://xapi.typsy.com/account/identifier": "53a510e1fc3e49159894206147c8410c",
                 "http://xapi.typsy.com/account/name": "Demo Inc",
                 "http://xapi.typsy.com/account/vanity-name": "Demo"
             }
@@ -127,7 +128,7 @@ This is a sample message sent at course progressed
             }
         },
         "verb": {
-            "id": "http://xapi.typsy.com/verbs/progressed",
+            "id": "http://adlnet.gov/expapi/verbs/progressed",
             "display": {
                 "en": "progressed"
             }
@@ -145,13 +146,14 @@ This is a sample message sent at course progressed
                     "en": "Mastering wine service is one of the most important and valuable skills a server can possess. The ability to perform tableside wine service with confidence is a guaranteed way to display your professionalism and your knowledge of the different aspects of the hospitality industry. It's also an una..."
                 },
                 "extensions": {
-                    "http://xapi.typsy.com/course/id": 299,
-                    "http://xapi.typsy.com/course/issuer": "Typsy",
                     "http://xapi.typsy.com/course/self-discovery": false,
                     "http://xapi.typsy.com/course/iteration": 1,
-                    "http://xapi.typsy.com/user/workspace-structures": "Hotel A,Hotel B",
-                    "http://xapi.typsy.com/user/workspace-teams": "Bar Staff",
-                    "http://xapi.typsy.com/user/workspace-job-roles": "Barista"
+                    "http://xapi.typsy.com/course/length": 1704,
+                    "http://xapi.typsy.com/issuer/name": "Typsy",
+                    "http://xapi.typsy.com/issuer/identifier": "736a1901b3ae4a549878e0b7687ba646",
+                    "http://xapi.typsy.com/user/workspace/structures": [{"name":"Area A"},{"name":"Area B"}],
+                    "http://xapi.typsy.com/user/workspace/teams": [{"name":"Bar staff"}],
+                    "http://xapi.typsy.com/user/workspace/job-roles": [{"name":"Barista"}]
                 },
                 "interactionType": "choice"
             }
@@ -170,10 +172,10 @@ This is a sample message sent at course progressed
             "platform": "Typsy",
             "language": "en",
             "extensions": {
-                "http://xapi.typsy.com/user/workspace-id": 987654321,
-                "http://xapi.typsy.com/user/workspace-email": "john.shaker@sample.com",
-                "http://xapi.typsy.com/user/workspace-claims": "customer-employee-id:0123456789",
-                "http://xapi.typsy.com/account/id": 82,
+                "http://xapi.typsy.com/user/email": "john.shaker@sample.com",
+                "http://xapi.typsy.com/user/workspace/identifier": "8f98e80195d94516b9007c4d8f785967",
+                "http://xapi.typsy.com/user/workspace/claims": [{"name":"customer-employee-id","value":"0123456789"}],
+                "http://xapi.typsy.com/account/identifier": "53a510e1fc3e49159894206147c8410c",
                 "http://xapi.typsy.com/account/name": "Demo Inc",
                 "http://xapi.typsy.com/account/vanity-name": "Demo"
             }
