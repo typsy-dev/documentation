@@ -10,7 +10,7 @@ For more information about xApi visit https://xapi.com/statements-101
 ## Supported statements
 Typsy currently supports **progressed** and **completed** [verbs](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) for Courses & Lessons.
 
-By default, these verbs use a Typsy namespace (e.g. http://xapi.typsy.com/verbs/completed). The messages can also be provided with the [ADLNET namespace](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) (e.g. https://adlnet.gov/expapi/verbs/completed)
+By default, these verbs use the [ADLNET namespace](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) (e.g. https://adlnet.gov/expapi/verbs/completed)
 
 ## Integration
 ### Integration overview
