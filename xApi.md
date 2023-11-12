@@ -1,3 +1,4 @@
+<base target="_blank">
 # xApi statements
 Typsy supports publishing xApi statements when certain learning events are completed.
 
