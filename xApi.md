@@ -93,8 +93,8 @@ This is a sample message sent at course completion
                 "http://xapi.typsy.com/course/quiz/min": 10,
                 "http://xapi.typsy.com/course/quiz/max": 13,			
                 "http://specification.openbadges.org/xapi/extensions/badgeassertion": {
-		    "@id": "https://badges.typsy.com/assertion/3c56120d0da646a59cc4b6d0900e0601"
-	    	}
+			"@id": "https://badges.typsy.com/assertion/3c56120d0da646a59cc4b6d0900e0601"
+		}
             }
         },
         "context": {
