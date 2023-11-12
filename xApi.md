@@ -12,6 +12,9 @@ Typsy currently supports **progressed** and **completed** [verbs](https://github
 
 By default, these verbs use the [ADLNET namespace](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#verb) (e.g. https://adlnet.gov/expapi/verbs/completed)
 
+## Namespaces
+You can access more detailed information about what each namespace means by going directly to the namespace URL. For example [http://xapi.typsy.com/course/quiz/min](http://xapi.typsy.com/course/quiz/min) provides information about what the *min* value.
+
 ## Integration
 ### Integration overview
 1. A learner completes a course within Typsy.
