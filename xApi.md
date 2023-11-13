@@ -74,9 +74,6 @@ This is a sample message sent at course completion
                     "http://xapi.typsy.com/length": 1704,
                     "http://xapi.typsy.com/issuer/name": "Typsy",
                     "http://xapi.typsy.com/issuer/identifier": "736a1901b3ae4a549878e0b7687ba646",
-                    "http://xapi.typsy.com/user/workspace/structures": [{"name":"Area A"},{"name":"Area B"}],
-                    "http://xapi.typsy.com/user/workspace/teams": [{"name":"Bar staff"}],
-                    "http://xapi.typsy.com/user/workspace/job-roles": [{"name":"Barista"}],
                     "http://xapi.typsy.com/badge/expires": "2024-02-16T02:05:12.48Z"
                 },
                 "interactionType": "choice"
@@ -107,6 +104,9 @@ This is a sample message sent at course completion
                 "http://xapi.typsy.com/user/email": "john.shaker@sample.com",
                 "http://xapi.typsy.com/user/workspace/identifier": "8f98e80195d94516b9007c4d8f785967",
                 "http://xapi.typsy.com/user/workspace/claims": [{"name":"customer-employee-id","value":"0123456789"}],
+                "http://xapi.typsy.com/user/workspace/structures": [{"name":"Area A"},{"name":"Area B"}],
+                "http://xapi.typsy.com/user/workspace/teams": [{"name":"Bar staff"}],
+                "http://xapi.typsy.com/user/workspace/job-roles": [{"name":"Barista"}],
                 "http://xapi.typsy.com/account/identifier": "53a510e1fc3e49159894206147c8410c",
                 "http://xapi.typsy.com/account/name": "Demo Inc",
                 "http://xapi.typsy.com/account/vanity-name": "Demo"
@@ -156,10 +156,7 @@ This is a sample message sent at course progressed
                     "http://xapi.typsy.com/iteration": 1,
                     "http://xapi.typsy.com/length": 1704,
                     "http://xapi.typsy.com/issuer/name": "Typsy",
-                    "http://xapi.typsy.com/issuer/identifier": "736a1901b3ae4a549878e0b7687ba646",
-                    "http://xapi.typsy.com/user/workspace/structures": [{"name":"Area A"},{"name":"Area B"}],
-                    "http://xapi.typsy.com/user/workspace/teams": [{"name":"Bar staff"}],
-                    "http://xapi.typsy.com/user/workspace/job-roles": [{"name":"Barista"}]
+                    "http://xapi.typsy.com/issuer/identifier": "736a1901b3ae4a549878e0b7687ba646"
                 },
                 "interactionType": "choice"
             }
@@ -181,6 +178,9 @@ This is a sample message sent at course progressed
                 "http://xapi.typsy.com/user/email": "john.shaker@sample.com",
                 "http://xapi.typsy.com/user/workspace/identifier": "8f98e80195d94516b9007c4d8f785967",
                 "http://xapi.typsy.com/user/workspace/claims": [{"name":"customer-employee-id","value":"0123456789"}],
+                "http://xapi.typsy.com/user/workspace/structures": [{"name":"Area A"},{"name":"Area B"}],
+                "http://xapi.typsy.com/user/workspace/teams": [{"name":"Bar staff"}],
+                "http://xapi.typsy.com/user/workspace/job-roles": [{"name":"Barista"}],
                 "http://xapi.typsy.com/account/identifier": "53a510e1fc3e49159894206147c8410c",
                 "http://xapi.typsy.com/account/name": "Demo Inc",
                 "http://xapi.typsy.com/account/vanity-name": "Demo"
