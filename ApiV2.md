@@ -668,9 +668,10 @@ Required
  - vanityName: The name of the property that the Users will see
  - tzIdentifier: The timezone which the property operates in (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
  - country: 2 letter country code the property resides in (https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
- - Code: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
+ - code: The internal code your company uses to identify its properties, needed to identify which child account Users will be created in when using the User API
 
  Optional
+ - region: The region which the property resides in
  - structures: Used for creating structures (venues/departments/groups) within your account to sort your Users into 
  - teams: Used for creating teams within your account to sort your Users into
 
@@ -680,7 +681,8 @@ Required
   "vanityName": "My Account",
   "tzIdentifier": "Australia/Melbourne",
   "country": "AU",
-  "Code": "MEL_HOTEL1",
+  "code": "MEL_HOTEL1",
+  "region": "APAC"
   "structures": [
     {
       "name": "Hotel Restaurant"
@@ -848,6 +850,7 @@ Optional
           "vanityName": "My Account",
           "tzIdentifier": "Australia/Melbourne",
           "country": "AU",
+          "region": "APAC",
           "structureCount": 2,
           "teamCount": 2
         }
@@ -882,6 +885,7 @@ Returns an AccountSummaryDetailed object.
   "vanityName": "My Account",
   "tzIdentifier": "Australia/Melbourne",
   "country": "AU",
+  "region": "APAC",
   "structures": [
     {
       "identifier": "4f3ee0a5a6d649a1be0e5bb523c21451",
