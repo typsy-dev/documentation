@@ -223,7 +223,7 @@ Example response where create a user request has been successful. The documentat
 
 
 #### Bad Request
-Example response where the user create request failed validation.
+Example response where the user create request failed validation.  A 400 Bad Request status code will be returned.
 
 ```
 {
