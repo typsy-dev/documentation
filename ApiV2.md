@@ -784,7 +784,7 @@ Example response where the account create request has been successful. The docum
 
 
 #### Request processed with errors
-Example response where the account create request has failed.
+Example response where the user create request has been accepted but has failed processing.  This is typically because a business rule has failed.
 
 ```
 {
