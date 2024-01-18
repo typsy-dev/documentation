@@ -220,6 +220,29 @@ Example response where create a user request has been successful. The documentat
     "statusUrl": "https://api.typsy.com/v2/users/request-status/a2e553c0-c963-4bdd-87de-1805122740e6"
 }
 ```
+
+
+#### Bad Request
+Example response where the user create request failed validation.
+
+```
+{
+    "requestId": "",
+    "status": "failed",
+    "success": false,
+    "errors": [
+        {
+            "code": "NotNullValidator",
+            "description": "last name cannot be null."
+        },
+        {
+            "code": "NotEmptyValidator",
+            "description": "last name cannot be empty."
+        }
+    ]
+}
+```
+
 ## User depart
 
 ### Endpoint
@@ -511,7 +534,7 @@ Example response where the user create request has been successful.
 }
 ```
 
-#### Bad request
+#### Request processed with errors
 Example response where the user create request has failed.
 ```
 {
@@ -717,6 +740,28 @@ Example response where the Account create request has been successful. The docum
 }
 ```
 
+
+#### Bad Request
+Example response where the account create request failed validation.
+
+```
+{
+    "requestId": "",
+    "status": "failed",
+    "success": false,
+    "errors": [
+        {
+            "code": "NotNullValidator",
+            "description": "vanityName cannot be null."
+        },
+        {
+            "code": "NotEmptyValidator",
+            "description": "vanityName cannot be empty."
+        }
+    ]
+}
+```
+
 ## Request Status
 
 ### Endpoint
@@ -738,7 +783,7 @@ Example response where the account create request has been successful. The docum
 ```
 
 
-#### Bad request
+#### Request processed with errors
 Example response where the account create request has failed.
 
 ```
