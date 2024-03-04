@@ -61,5 +61,5 @@ For example, Acme Hotel Group has 5 hotels.  Each of these hotels will be setup 
 
 ### Creating a new Typsy Account
 Typsy will provision a new account each time a new location is added.  This is an internal process to Typsy as it requires setting up the appropriate permissions and billing.
-Typsy will manage the mapping of the 'Account Identifier' to teh 'Typsy Account Id'.
+Typsy will manage the mapping of the 'Account Identifier' to the 'Typsy Account Id'.
 
