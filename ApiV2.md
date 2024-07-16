@@ -12,6 +12,7 @@ Authenticate
 User API
 1. [Create a user (assign a license to a new user)](#user-create)
 2. [Depart a user (removes the assigned license and prevents login)](#user-depart)
+2. [Update a user](#user-update)
 3. [Add a user to a Structure](#user-add-structures)
 4. [Remove a user from a Structure](#user-remove-structures)
 5. [Add a user to a Team](#user-add-teams)
@@ -275,6 +276,45 @@ Example response where depart a user request has been successful. The documentat
     "errors": [],
     "success": true
     "statusUrl": "https://api.typsy.com/v2/users/request-status/f1c8c78c-78f0-4b50-af09-df0a14dc3759"
+}
+```
+
+## User update
+
+### Endpoint
+POST to https://api.typsy.com/v2/users/workspace/update
+
+### Request
+Required
+- identifier: The typsy identifier for the user
+
+Optional
+- firstName: The first name of the user
+- lastName: The last name of the user
+- email: The email of the user
+- ssoUserIdentifier: Used for adding the user identifier for SSO login.
+
+
+Example request to update a user by identifier.  
+```
+{
+    "identifier": "470fa307710b4c1584fed51e875f050f"
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "email": "first.last@domain.com",
+    "ssoUserIdentifier": "123456"
+}
+```
+
+### Response
+Example response where create a user request has been successful. The documentation on what do with the requestId is [here](#request-status)
+```
+{
+    "requestId": "21752ab0-83ee-4997-9bc9-4870a4fc2884",
+    "status": "in progress",
+    "errors": [],
+    "success": true
+    "statusUrl": "https://api.typsy.com/v2/users/request-status/21752ab0-83ee-4997-9bc9-4870a4fc2884"
 }
 ```
 
