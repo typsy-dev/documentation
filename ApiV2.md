@@ -286,7 +286,7 @@ POST to https://api.typsy.com/v2/users/workspace/update
 
 ### Request
 Required
-- identifier: The typsy identifier for the user
+- identifier: The Typsy identifier for the user
 
 Optional
 - firstName: The first name of the user
