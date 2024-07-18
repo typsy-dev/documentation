@@ -282,7 +282,7 @@ Example response where depart a user request has been successful. The documentat
 ## User update
 
 ### Endpoint
-POST to https://api.typsy.com/v2/users/workspace/update
+PUT to https://api.typsy.com/v2/users/workspace/update
 
 ### Request
 Required
