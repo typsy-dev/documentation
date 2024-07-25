@@ -745,7 +745,7 @@ Required
   "tzIdentifier": "Australia/Melbourne",
   "country": "AU",
   "code": "MEL_HOTEL1",
-  "region": "APAC"
+  "region": "APAC",
   "structures": [
     {
       "name": "Hotel Restaurant"
