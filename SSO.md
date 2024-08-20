@@ -14,10 +14,10 @@ The following claims will be passed by client (IDP) to Typsy (SP):
 
 - **Unique identifier for the user (Required)** - This identifier is unique to the user in the IDP
 - <a id="claim-account-identifier"></a>**Account identifier (Required)** - This identifier will be used to map the user to an account in Typsy. For example - the client typically will have one Typsy account per location. This claim must pass the 'location code' so that the user can be mapped to the correct account in Typsy. See [account mapping](#account-mapping).
-- **Email address (Required)** - A user is created in Typsy using the email address. If the user does not have an email address, then a fictitious email address can be passed for the user - e.g. {unique-identifier-for-user}@acme.com.
+- **Email address (Required)** - A user is created in Typsy using the email address. If the user does not have an email address, then a fictitious email address can be passed for the user - e.g. {unique-identifier-for-user}@acmehotel.com.
 - **Structure (Optional)** - Department or Venue or Group (known in Typsy as a Structure) - If this value is passed, then the corresponding Structure will be created in Typsy in the account linked to the account identifier and the user will be added to this Structure.  It is also possible to automatically add all users to a default Structure.
 - **Team (Optional)** - If this value is passed, then the team will be created in Typsy in the account linked to the account identifier and the user will be added to this team.  It is also possible to automatically add all users to a default team.
-- **Job Roles (Optional)** (should map to Typsy job role) - If this value is passed, then the user will be mapped to the corresponding job role in Typsy.
+- **Job Roles (Optional)** (must exactly map to Typsy job role) - If this value is passed, then the user will be mapped to the corresponding job role in Typsy.
 
 Note: Department or Venue or Group (Structure) is an optional claim. But if this claim value is not passed as part of the sign in process and the user in Typsy is not already assigned to any department or Venue or Group in the account, then the user will be displayed the workflow to select the Department or Venue or Group when the user is redirected to Typsy (SP) from the LMS (IDP).
    
