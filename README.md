@@ -34,7 +34,7 @@ https://info.typsy.com/typsy-integration-demo
 Documentation on how to setup LTI in Moodle - https://typsy.sharepoint.com/:w:/s/Development/EdfXkOsLxb9Ehsm8s8YLwkwB8urIj0qiCYCYINZ5B6ZFcQ?e=8w14N6
 
 ### Canvas
-Documentation on how to setup LTI in Canvas - https://docs.google.com/document/d/1d-bvbrFG1chRzptg63zhF0UN_5DxoBf6HmfIHeY3sjk/edit?usp=sharing
+Documentation on how to setup LTI in Canvas - https://typsy.sharepoint.com/:w:/s/Development/EbQLMBRKqrdNn3gUZ-OWVyIBOR3BnYTTIfzJzWyKSC4IeA?e=alHaOJ
 
 ### Blackboard
 Documentation on how to setup LTI in Blackboard - https://docs.google.com/document/d/1z2acuyLy6dNxJDz8Z3RkQNtM-KF2s8Rdhc7bohvVNy4/edit?usp=sharing
