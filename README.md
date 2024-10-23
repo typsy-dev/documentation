@@ -19,9 +19,6 @@ Any integration with Typsy requires that you support three key functions:
 
 All of the integration approaches enable you to complete the aforementioned three key functions.
 
-The following document provides an overview of how integrations with Typsy work:
-https://docs.google.com/document/d/1vv0EgVPCiCUX15xJEFbs0elN80CzUsri1OvxBgrI4oU/edit?usp=sharing
-
 # Integration options
 The following sections detail the specific integration options covered in the 'Integration Overview'. 
 
