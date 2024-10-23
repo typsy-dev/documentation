@@ -37,7 +37,7 @@ Documentation on how to setup LTI in Moodle - https://typsy.sharepoint.com/:w:/s
 Documentation on how to setup LTI in Canvas - https://typsy.sharepoint.com/:w:/s/Development/EbQLMBRKqrdNn3gUZ-OWVyIBOR3BnYTTIfzJzWyKSC4IeA?e=alHaOJ
 
 ### Blackboard
-Documentation on how to setup LTI in Blackboard - https://docs.google.com/document/d/1z2acuyLy6dNxJDz8Z3RkQNtM-KF2s8Rdhc7bohvVNy4/edit?usp=sharing
+Documentation on how to setup LTI in Blackboard - https://typsy.sharepoint.com/:w:/s/Development/EdWEcFfaAglFtw8ltyY1t0EBBCSQFZqH-rCXEa7D7fNBtA?e=iNZB7T
 
 ## SCORM
 Utilizing the SCORM standard is a common approach in many older Learning Management Systems.  Typsy always **recommends LTI over SCORM** as it is more feature rich.  As SCORM does not pass across the User's email address there are some additional steps in place, prior to watching the first lesson, to capture the email.  
