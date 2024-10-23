@@ -31,7 +31,7 @@ The following link contains a video which demonstrates adding Typsy content, via
 https://info.typsy.com/typsy-integration-demo
 
 ### Moodle
-Documentation on how to setup LTI in Moodle - https://docs.google.com/document/d/1px34Gz59wV716BVvLpp7BAh7k22K-YgCQAj_eosY4f0/edit?usp=sharing
+Documentation on how to setup LTI in Moodle - https://typsy.sharepoint.com/:w:/s/Development/EdfXkOsLxb9Ehsm8s8YLwkwB8urIj0qiCYCYINZ5B6ZFcQ?e=8w14N6
 
 ### Canvas
 Documentation on how to setup LTI in Canvas - https://docs.google.com/document/d/1d-bvbrFG1chRzptg63zhF0UN_5DxoBf6HmfIHeY3sjk/edit?usp=sharing
