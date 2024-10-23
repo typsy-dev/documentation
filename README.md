@@ -42,4 +42,4 @@ Documentation on how to setup LTI in Blackboard - https://docs.google.com/docume
 ## SCORM
 Utilizing the SCORM standard is a common approach in many older Learning Management Systems.  Typsy always **recommends LTI over SCORM** as it is more feature rich.  As SCORM does not pass across the User's email address there are some additional steps in place, prior to watching the first lesson, to capture the email.  
 
-Documentation on how to setup SCORM, using Moodle as an example - https://docs.google.com/document/d/165aOsSMsAeGEnrjdWuews6mYQ3aBXGa6qxZa-qhNHKc/edit?usp=sharing 
+Documentation on how to setup SCORM, using Moodle as an example - https://typsy.sharepoint.com/:w:/s/Development/EbHia077-NdNvDQqio16mSkBPgFFYCbHKCQueR9QOoSCWQ?e=JxtJOi
