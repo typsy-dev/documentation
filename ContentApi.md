@@ -1,6 +1,6 @@
 <base target="_blank">
 
-# CONTENT API
+# Content API
 Typsy provides an API for operations to query Content.
 
 ## Actions
