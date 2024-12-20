@@ -128,12 +128,11 @@ Optional
 	    - created: The created date of the course
 	    - updated: The updated date of the course
 	    - lengthSeconds: The total length in seconds of the course
-
-- metadata:
-    - total - total count of courses
-    - count - how many courses were returned
-    - limit - how many courses were requested
-    - offset - how many courses were skipped
+    - metadata:
+	    - total - total count of courses
+	    - count - how many courses were returned
+	    - limit - how many courses were requested
+	    - offset - how many courses were skipped
 ```
 {
     "courses": [
@@ -306,11 +305,11 @@ Optional
 	    - updated: The updated date of the lesson
 	    - lengthSeconds: The total length in seconds of the lesson
 
-- metadata:
-    - total - total count of lessons
-    - count - how many lessons were returned
-    - limit - how many lessons were requested
-    - offset - how many lessons were skipped
+	- metadata:
+	    - total - total count of lessons
+	    - count - how many lessons were returned
+	    - limit - how many lessons were requested
+	    - offset - how many lessons were skipped
 ```
 {
 	"identifier": "32a49a1e4a0842de87afa0a10014a163",
