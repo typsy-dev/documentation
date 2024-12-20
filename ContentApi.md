@@ -137,6 +137,19 @@ Optional
 {
     "courses": [
         {
+            "identifier": "b04eb73204374d0fb1264f670d782198",
+            "name": "Front of house essentials",
+            "issuer": "Typsy",
+            "category": "Service",
+            "instructor": "Brooke Adey",
+            "description": "Working front of house is one of the most rewarding paths you can take in the hospitality industry. The Front Of House role requires you to hone your customer service and communication skills while working in a fast paced and often challenging environment that sharpens your problem solving abilit...",
+            "lessonCount": 15,
+            "image": "https://images-staging.typsy.com/get/issuers/694081e89df44c39bccb4dabea9568a4/courses/b04eb73204374d0fb1264f670d782198.png?lastMod=638629042570864012",
+            "created": "2020-08-01T04:57:54.443",
+            "updated": "2024-09-25T23:37:37.0864012",
+            "lengthSeconds": 1805
+        },
+	{
             "identifier": "c6286b1987df4472bc07d4d3ee9c1a8b",
             "name": "Mise en place",
             "issuer": "Typsy",
@@ -312,6 +325,20 @@ Optional
 	    - offset - how many lessons were skipped
 ```
 {
+    "lessons": [
+        {
+            "identifier": "77b2b9e055584edaae7ba8a481f8baf3",
+            "name": "Welcome - Sustainable food practices",
+            "issuer": "Typsy",
+            "category": "Culinary",
+            "instructor": "Carlos Henriques",
+            "description": "Welcome to Sustainable food practices! In this course, Carlos Henriques introduces you to the importance of sustainable food practices and how you can make small changes without compromising quality or financial profitability. Ready to begin? Let's do it! This course is ideal for any kitchen empl...",
+            "image": "https://images-staging.typsy.com/get/issuers/694081e89df44c39bccb4dabea9568a4/lessons/77b2b9e055584edaae7ba8a481f8baf3.png?lastMod=637418165828745052",
+            "created": "0001-01-01T00:00:00",
+            "updated": "2020-11-24T12:09:42.8745052",
+            "lengthSeconds": 98
+        },
+	{
 	"identifier": "32a49a1e4a0842de87afa0a10014a163",
 	"name": "Conclusion - Sustainable food practices",
 	"issuer": "Typsy",
@@ -322,7 +349,17 @@ Optional
 	"created": "0001-01-01T00:00:00",
 	"updated": "2020-11-24T12:15:12.5934973",
 	"lengthSeconds": 74
-}
+	}
+    ],
+    "success": true,
+    "errors": [],
+    "metadata": {
+        "total": 1797,
+        "count": 1,
+        "limit": 1,
+        "offset": 0
+    }
+}	
 ```
 
 ## Get Lesson
