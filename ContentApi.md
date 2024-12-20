@@ -1,7 +1,7 @@
 <base target="_blank">
 
 # API V2
-Typsy provides an API for basic operations on Users and Accounts.
+Typsy provides an API for operations to query Content.
 
 ## Actions
 The supported actions are:
@@ -116,19 +116,18 @@ Optional
 
 ### Response
 - courses: A collection of course summary objects
-
-Course Summary
-    - identifier: The Typsy identifier for the course object
-    - name: The full name of the course
-	- issuer: The issuer for the course
-    - category: The category of the course
-    - instructor: The instructor of the course
-    - description: The description of the course
-    - lessonCount: The count of lessons in the course
-    - image: The image of the course
-    - created: The created date of the course
-    - updated: The updated date of the course
-    - lengthSeconds: The total length in seconds of the course
+    - Course Summary
+	    - identifier: The Typsy identifier for the course
+	    - name: The full name of the course
+		- issuer: The issuer for the course
+	    - category: The category of the course
+	    - instructor: The instructor of the course
+	    - description: The description of the course
+	    - lessonCount: The count of lessons in the course
+	    - image: The image of the course
+	    - created: The created date of the course
+	    - updated: The updated date of the course
+	    - lengthSeconds: The total length in seconds of the course
 
 - metadata:
     - total - total count of courses
@@ -168,7 +167,10 @@ Course Summary
 ### Endpoint
 GET to https://api.typsy.com/v2/courses/{identifier}
 
-
+### Request
+Required
+ - identifier: The Typsy identifier for the course returned in the list courses api call
+   
 ### Response
 Returns an Course object.
 
@@ -292,18 +294,17 @@ Optional
 
 ### Response
 - lessons: A collection of lesson summary objects
-
-Lesson Summary
-    - identifier: The Typsy identifier for the lesson object
-    - name: The full name of the lesson
-	- issuer: The issuer for the lesson
-    - category: The category of the lesson
-    - instructor: The instructor of the lesson
-    - description: The description of the lesson
-    - image: The image of the lesson
-    - created: The created date of the lesson
-    - updated: The updated date of the lesson
-    - lengthSeconds: The total length in seconds of the lesson
+	- Lesson Summary
+	    - identifier: The Typsy identifier for the lesson object
+	    - name: The full name of the lesson
+		- issuer: The issuer for the lesson
+	    - category: The category of the lesson
+	    - instructor: The instructor of the lesson
+	    - description: The description of the lesson
+	    - image: The image of the lesson
+	    - created: The created date of the lesson
+	    - updated: The updated date of the lesson
+	    - lengthSeconds: The total length in seconds of the lesson
 
 - metadata:
     - total - total count of lessons
@@ -330,7 +331,10 @@ Lesson Summary
 ### Endpoint
 GET to https://api.typsy.com/v2/lessons/{identifier}
 
-
+### Request
+Required
+ - identifier: The Typsy identifier for the lesson returned in the list courses api call
+ 
 ### Response
 Returns an Lesson object.
 
