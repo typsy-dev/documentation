@@ -332,7 +332,7 @@ GET to https://api.typsy.com/v2/lessons/{identifier}
 
 ### Request
 Required
- - identifier: The Typsy identifier for the lesson returned in the list courses api call
+ - identifier: The Typsy identifier for the lesson returned in the list lessons api call
  
 ### Response
 Returns an Lesson object.
