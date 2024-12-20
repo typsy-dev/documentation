@@ -166,7 +166,7 @@ Course Summary
 ## Get Course
 
 ### Endpoint
-POST to https://api.typsy.com/v2/courses/{identifier}
+GET to https://api.typsy.com/v2/courses/{identifier}
 
 
 ### Response
@@ -328,7 +328,7 @@ Lesson Summary
 ## Get Lesson
 
 ### Endpoint
-POST to https://api.typsy.com/v2/lessons/{identifier}
+GET to https://api.typsy.com/v2/lessons/{identifier}
 
 
 ### Response
