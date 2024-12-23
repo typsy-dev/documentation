@@ -15,7 +15,7 @@ Course API
 
 Lesson API
 1. [Get Lessons list (get list of lessons)](#list-lessons)
-2. [Get a lesson (get a lesson)](#get-lesson)
+2. [Get a Lesson (get a lesson)](#get-lesson)
 
 ## Authentication
 Typsy will provide you with the following items:
