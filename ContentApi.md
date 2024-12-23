@@ -112,7 +112,7 @@ GET to https://api.typsy.com/v2/courses?offset=0&limit=25
 ### Request
 Optional
  - offset: How many records to skip. This is used to page through records. Default = 0
- - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side. Default = 1
+ - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 50. This value is clamped on the server side. Default = 1
 
 ### Response
 - courses: A collection of course summary objects
@@ -302,7 +302,7 @@ GET to https://api.typsy.com/v2/lessons?offset=0&limit=25
 ### Request
 Optional
  - offset: How many records to skip. This is used to page through records. Default = 0
- - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 25. This value is clamped on the server side. Default = 1
+ - limit: Amount of records to return for the request. Minimum value is 1 and Maximum is 50. This value is clamped on the server side. Default = 1
 
 ### Response
 - lessons: A collection of lesson summary objects
