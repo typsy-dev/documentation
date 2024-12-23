@@ -291,7 +291,7 @@ Returns an Course object.
 
 #### No course found
 
-A 404 Not Found response will be returned if no lesson is found.
+A 404 Not Found response will be returned if no course is found.
 
 
 ## List Lessons
