@@ -5,9 +5,8 @@ There are a variety of options to integrate with Typsy and sometimes the choices
 You connect via either:
 1. Learning Tools Interoperability (LTI)
 2. SCORM
-4. Typsy Web Player
-5. Typsy LMS API
-6. [xApi](https://github.com/typsy-dev/documentation/blob/master/xApi.md) - contact us for more information about this feature.
+3. Typsy LMS API
+4. [xApi](https://github.com/typsy-dev/documentation/blob/master/xApi.md) - contact us for more information about this feature.
 
 Each of these approaches are detailed below under 'Integration options'.
 
