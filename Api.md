@@ -1,6 +1,7 @@
 <base target="_blank">
 
-# API
+# API (Deprecated)
+This API has been replaced with V2.
 Typsy provides an API for basic operations on Members (the users within your Account).
 
 ## Actions
